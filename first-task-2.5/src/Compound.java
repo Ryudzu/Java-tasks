@@ -39,7 +39,7 @@ public class Compound {
 
         // Результат выполнения программы
 
-        if (compound_words.size() > 0)
+        if (!compound_words.isEmpty())
             System.out.println("Найденные составные слова: " + String.join(", ", compound_words) + ".");
         else
             System.out.println("Составные слова не найдены.");

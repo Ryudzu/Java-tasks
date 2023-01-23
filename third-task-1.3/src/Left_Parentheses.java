@@ -13,7 +13,8 @@ public class Left_Parentheses {
 
         String initial_expression = "1*2)*3-4)*5*6)+7-8))))";
         String final_expression = "";
-        int digits = 0, pairs = 0;
+        int digits = 0;
+        int pairs = 0;
 
         // С помощью цикла подсчитываем количество цифр в строке-выражении и с помощью них можно узнать количество пар чисел
         // Например, (1+2)*(3-4) это 2 пары.

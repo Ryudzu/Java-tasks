@@ -16,7 +16,7 @@ public class Stack_peek {
         try {
             return arr[top];
         } catch (Exception e) {
-            System.out.println("Стек пустой");
+            System.err.println("Стек пустой");
             System.exit(0);
             return 0;
         }
@@ -31,6 +31,7 @@ public class Stack_peek {
         stack.push(42);
 
         //Проверка работоспособности метода peek() класса Stack_peek
+
         System.out.println(stack.peek());
 
     }

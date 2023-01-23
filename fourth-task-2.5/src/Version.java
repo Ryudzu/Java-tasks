@@ -10,7 +10,7 @@ public class Version {
     }
 
     public void SetVersion (String version) {
-        this.version_arr = version.split("[^.[0-9]]\\s+|_|\\s|[^.[0-9]]+$");
+        this.version_arr = version.split("([^.[0-9]]\\s+)|_|\\s|([^.[0-9]]+$)");
     }
 
     public String GetVersion () {

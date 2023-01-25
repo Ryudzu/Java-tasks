@@ -1,9 +1,15 @@
-public class Stack_peek {
+package stackpeek;
+
+import java.util.logging.Logger;
+
+public class StackPeek {
+
+    private static final Logger logger = Logger.getLogger(StackPeek.class.getName());
 
     private final int[] arr;
     private int top;
 
-    public Stack_peek (int size) {
+    public StackPeek (int size) {
         this.arr = new int[size];
         this.top = -1;
     }
@@ -16,15 +22,14 @@ public class Stack_peek {
         try {
             return arr[top];
         } catch (Exception e) {
-            System.err.println("Стек пустой");
+            logger.info("Стек пустой");
             System.exit(0);
             return 0;
         }
     }
-
     public static void main(String[] args) {
 
-        Stack_peek stack = new Stack_peek(5);
+        StackPeek stack = new StackPeek(5);
         stack.push(10);
         stack.push(1);
         stack.push(52);
@@ -32,7 +37,7 @@ public class Stack_peek {
 
         //Проверка работоспособности метода peek() класса Stack_peek
 
-        System.out.println(stack.peek());
+        logger.info("Последнее добавленное число в Stack - " + stack.peek());
 
     }
 }

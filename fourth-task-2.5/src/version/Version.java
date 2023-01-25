@@ -8,20 +8,20 @@ public class Version {
 
     private static final Logger logger = Logger.getLogger(Version.class.getName());
 
-    private String[] version_arr;
+    private String[] versionArr;
 
     public Version (String version) {
         setVersion(version);
 
-        logger.log(Level.INFO, () -> getVersion());
+        logger.log(Level.INFO, this::getVersion);
     }
 
     public void setVersion (String version) {
-        this.version_arr = version.split("([^.\\d]\\s+)|(_)|(\\s)|([^.\\d]+$)");
+        this.versionArr = version.split("([^.\\d]\\s+)|(_)|(\\s)|([^.\\d]+$)");
     }
 
     public String getVersion () {
-        return "Список версий ПО: " + Arrays.toString(version_arr);
+        return "Список версий ПО: " + Arrays.toString(versionArr);
     }
 
     // Метод класса version.Version, в который передается объект интерфейса Comparable, с помощью этого объекта можно обратится к абстрактному методу
@@ -44,20 +44,22 @@ public class Version {
             String[] fvArr = fv.split("\\.");
             String[] svArr = sv.split("\\.");
 
+            int f = 0;
+            int s = 0;
+
             for (int i = 0; i < 3; i++) {
-                if (Integer.parseInt(svArr[i]) > Integer.parseInt(fvArr[i])) {
-                    logger.log(Level.INFO, () -> "Версия " + String.join(".", svArr) + " больше, чем версия " + String.join(".", fvArr));
-                    break;
-                }
-
-                if (Integer.parseInt(svArr[i]) < Integer.parseInt(fvArr[i])) {
-                    logger.log(Level.INFO, () -> "Версия " + String.join(".", fvArr) + " больше, чем версия " + String.join(".", svArr));
-                    break;
-                }
-
-                if (i == 2)
-                    logger.log(Level.INFO, () -> "Версии одинаковы.");
+                if (Integer.parseInt(svArr[i]) > Integer.parseInt(fvArr[i]))
+                    s++;
+                else if (Integer.parseInt(svArr[i]) < Integer.parseInt(fvArr[i]))
+                    f++;
             }
+
+            if (s > f)
+                logger.log(Level.INFO, () -> "Версия " + String.join(".", svArr) + " больше, чем версия " + String.join(".", fvArr));
+            else if (s < f)
+                logger.log(Level.INFO, () -> "Версия " + String.join(".", fvArr) + " больше, чем версия " + String.join(".", svArr));
+            else
+                logger.log(Level.INFO, () -> "Версии одинаковы.");
         });
     }
 }

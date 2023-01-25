@@ -1,26 +1,33 @@
+package version;
+
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Version {
+
+    private static final Logger logger = Logger.getLogger(Version.class.getName());
 
     private String[] version_arr;
 
     public Version (String version) {
-        SetVersion(version);
-        System.out.println(GetVersion());
+        setVersion(version);
+
+        logger.log(Level.INFO, () -> getVersion());
     }
 
-    public void SetVersion (String version) {
-        this.version_arr = version.split("([^.\\d]\\s+)|_|\\s|([^.\\d]+$)");
+    public void setVersion (String version) {
+        this.version_arr = version.split("([^.\\d]\\s+)|(_)|(\\s)|([^.\\d]+$)");
     }
 
-    public String GetVersion () {
+    public String getVersion () {
         return "Список версий ПО: " + Arrays.toString(version_arr);
     }
 
-    // Метод класса Version, в который передается объект интерфейса Comparable, с помощью этого объекта можно обратится к абстрактному методу
+    // Метод класса version.Version, в который передается объект интерфейса Comparable, с помощью этого объекта можно обратится к абстрактному методу
     // difference и передать в него две строки (версии), которые после чего сравниваются уже в lambda выражении.
 
-    public void ver_difference(Comparable v) {
+    public void verDifference(Comparable v) {
         v.difference("115.1.1", "115.10.1");
     }
 
@@ -33,19 +40,23 @@ public class Version {
 
         // Для удобства вместо анонимного класса было использовано lambda выражение, поскольку интерфейс Comparable обладает лишь одним абстрактным методом
 
-        vers.ver_difference((String fv, String sv) -> {
-            String[] fv_arr = fv.split("\\.");
-            String[] sv_arr = sv.split("\\.");
+        vers.verDifference((String fv, String sv) -> {
+            String[] fvArr = fv.split("\\.");
+            String[] svArr = sv.split("\\.");
 
             for (int i = 0; i < 3; i++) {
-                if (Integer.parseInt(sv_arr[i]) > Integer.parseInt(fv_arr[i])) {
-                    System.out.println("Версия " + String.join(".", sv_arr) + " больше, чем версия " + String.join(".", fv_arr));
+                if (Integer.parseInt(svArr[i]) > Integer.parseInt(fvArr[i])) {
+                    logger.log(Level.INFO, () -> "Версия " + String.join(".", svArr) + " больше, чем версия " + String.join(".", fvArr));
                     break;
-                } else if (Integer.parseInt(sv_arr[i]) < Integer.parseInt(fv_arr[i])) {
-                    System.out.println("Версия " + String.join(".", fv_arr) + " больше, чем версия " + String.join(".", sv_arr));
+                }
+
+                if (Integer.parseInt(svArr[i]) < Integer.parseInt(fvArr[i])) {
+                    logger.log(Level.INFO, () -> "Версия " + String.join(".", fvArr) + " больше, чем версия " + String.join(".", svArr));
                     break;
-                } else if (i == 2)
-                    System.out.println("Версии одинаковы");
+                }
+
+                if (i == 2)
+                    logger.log(Level.INFO, () -> "Версии одинаковы.");
             }
         });
     }

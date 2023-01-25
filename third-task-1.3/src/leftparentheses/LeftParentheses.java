@@ -1,8 +1,12 @@
 package leftparentheses;
 
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LeftParentheses {
+
+    private static final Logger logger = Logger.getLogger(LeftParentheses.class.getName());
 
     public static void main(String[] args) {
 
@@ -12,9 +16,12 @@ public class LeftParentheses {
         Deque<Character> numbers = new ArrayDeque<>();
         Deque<Character> operators = new ArrayDeque<>();
         Queue<Character> generator = new LinkedList<>();
+        Scanner input = new Scanner(System.in);
 
-        String initialExpression = "1*2)*3-4)*5*6)+7-8))))";
+        logger.log(Level.INFO, "Введите числовое выражение без левых скобок: ");
+        String initialExpression = input.nextLine();
         String finalExpression = "";
+
         int digits = 0;
         int pairs = 0;
 
@@ -105,8 +112,8 @@ public class LeftParentheses {
 
         // Результат выполнения программы.
 
-        System.out.println("Исходное выражение без правых скобок: " + initialExpression);
-        System.out.println("Выражение с правыми скобками: " + finalExpression);
+        logger.log(Level.INFO, () -> "Исходное выражение без правых скобок: " + initialExpression);
+        logger.log(Level.INFO, "Выражение с правыми скобками: " + finalExpression);
     }
 
     public static void mulDivide (Queue<Character> generator, Deque<Character> operators, Deque<Character> numbers, char op, char number) {

@@ -1,10 +1,18 @@
+package Parentheses;
+
+import com.sun.tools.javac.Main;
+
 import java.util.*;
+import java.util.logging.Logger;
+
 public class Parentheses {
+
+    private static final Logger logger = Logger.getLogger(Main.class.getName());
     public static void main(String[] args) {
 
         // Создание пустого стека и системы ввода с клавиатуры.
 
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> stack = new ArrayDeque<>();
         Scanner input = new Scanner(System.in);
 
         // Создание словаря для проверки противоположности скобок по паттерну, пример: [(]) - false; [()] - true.
@@ -14,7 +22,7 @@ public class Parentheses {
         opposites.put(']', '[');
         opposites.put('}', '{');
 
-        System.out.print("Введите строку из скобок: ");
+        logger.info("Введите строку из скобок: ");
         String parentheses = input.nextLine();
 
         // Запуск цикла для прохода по всем элементам строки.
@@ -31,18 +39,14 @@ public class Parentheses {
 
                     // Если последняя скобка, добавленная в стек противоположна по паттерну, то идет удаление ее из стека, иначе результат False.
 
-                    if (stack.peek().equals(opposites.get(parentheses.charAt(i)))) {
+                    if (stack.peek().equals(opposites.get(parentheses.charAt(i))))
                         stack.pop();
-                    } else {
-                        System.out.println("False");
-                        System.exit(0);
-                    }
 
-                } catch (java.util.EmptyStackException e) {
+                } catch (Exception e) {
 
                     // Если скобка, которая "смотрит" влево стоит в начале строки, то программа завершается с выводом False.
 
-                    System.out.println("False");
+                    logger.info("False");
                     System.exit(0);
                 }
             }
@@ -51,8 +55,8 @@ public class Parentheses {
         // Если стек по итогу пустой, значит скобки сбалансированны верно и результат True, иначе False.
 
         if (stack.isEmpty())
-            System.out.println("True");
+            logger.info("True");
         else
-            System.out.println("False");
+            logger.info("False");
     }
 }

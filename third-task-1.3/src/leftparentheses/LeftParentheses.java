@@ -1,26 +1,28 @@
+package leftparentheses;
+
 import java.util.*;
 
-public class Left_Parentheses {
+public class LeftParentheses {
 
     public static void main(String[] args) {
 
         // Создаем два стека. В стеке numbers будут храниться числовые значения, а в operators математические операторы.
         // В качесте помощника в генерации числового выражения с недостающими левыми скобками будет выступать очередь - generator.
 
-        Stack<Character> numbers = new Stack<>();
-        Stack<Character> operators = new Stack<>();
+        Deque<Character> numbers = new ArrayDeque<>();
+        Deque<Character> operators = new ArrayDeque<>();
         Queue<Character> generator = new LinkedList<>();
 
-        String initial_expression = "1*2)*3-4)*5*6)+7-8))))";
-        String final_expression = "";
+        String initialExpression = "1*2)*3-4)*5*6)+7-8))))";
+        String finalExpression = "";
         int digits = 0;
         int pairs = 0;
 
         // С помощью цикла подсчитываем количество цифр в строке-выражении и с помощью них можно узнать количество пар чисел
         // Например, (1+2)*(3-4) это 2 пары.
 
-        for (int i = 0; i < initial_expression.length(); i++) {
-            if (Character.isDigit(initial_expression.charAt(i))) {
+        for (int i = 0; i < initialExpression.length(); i++) {
+            if (Character.isDigit(initialExpression.charAt(i))) {
                 digits++;
                 if (digits % 2 == 0)
                     pairs++;
@@ -35,21 +37,21 @@ public class Left_Parentheses {
 
         // С помощью цикла снова проходимся по строке-выражении и в нем необходимо выполнить основной функционал программы.
 
-        for (int i = 0; i < initial_expression.length(); i++) {
+        for (int i = 0; i < initialExpression.length(); i++) {
 
             // Если символ строки является числовым, то помещаем этот символ в стек с числами.
 
-            if (Character.isDigit(initial_expression.charAt(i)))
-                numbers.push(initial_expression.charAt(i));
+            if (Character.isDigit(initialExpression.charAt(i)))
+                numbers.push(initialExpression.charAt(i));
 
             // Если же символ строки является оператором '+', '-', '*' или '-', то помещаем этот символ в стек с символами.
 
-            else if (initial_expression.charAt(i) == '+' || initial_expression.charAt(i) == '-' || initial_expression.charAt(i) == '*' || initial_expression.charAt(i) == '/')
-                operators.push(initial_expression.charAt(i));
+            else if (initialExpression.charAt(i) == '+' || initialExpression.charAt(i) == '-' || initialExpression.charAt(i) == '*' || initialExpression.charAt(i) == '/')
+                operators.push(initialExpression.charAt(i));
 
             // Если же символом строки является правая скобка (')'), то уже в этом случае идет взаимодействовие со стеками.
 
-            else if (initial_expression.charAt(i) == ')') {
+            else if (initialExpression.charAt(i) == ')') {
 
                 // Если стек с операторами и числами не является пустыми, то заходим во внутрь условной конструкции
                 // и выполняется присвоение переменным с типом данных char операторам и чисел последнего вошедшего элемента
@@ -64,7 +66,7 @@ public class Left_Parentheses {
                         // Данная функция предназначена для тех случаев, когда между парами стоит оператор либо '*', либо '/'.
 
                         if (!operators.isEmpty() && pairs != 0) {
-                            mul_divide(generator, operators, numbers, op, number);
+                            mulDivide(generator, operators, numbers, op, number);
                             pairs--;
                         }
 
@@ -74,7 +76,7 @@ public class Left_Parentheses {
                         // условии, что перед этой парой не стоит оператор '*' или '/'.
 
                         else if (operators.isEmpty() && pairs != 0) {
-                            sum_sub(generator, numbers, op, number);
+                            sumSub(generator, numbers, op, number);
                             pairs--;
                         }
 
@@ -84,7 +86,7 @@ public class Left_Parentheses {
                         // ставить лишнюю скобку влево ('(').
 
                         else if (!operators.isEmpty() && pairs == 0)
-                            last_exception(generator, operators, numbers, op, number);
+                            lastException(generator, operators, numbers, op, number);
 
 
                 // Когда оба стека стали пустыми, то последним шагом является дописание оставшихся в конце выражения изначальных
@@ -99,15 +101,15 @@ public class Left_Parentheses {
         // foreach и соединить со строкой final_expression.
 
         for (Character element : generator)
-            final_expression = final_expression.concat(Character.toString(element));
+            finalExpression = finalExpression.concat(Character.toString(element));
 
         // Результат выполнения программы.
 
-        System.out.println("Исходное выражение без правых скобок: " + initial_expression);
-        System.out.println("Выражение с правыми скобками: " + final_expression);
+        System.out.println("Исходное выражение без правых скобок: " + initialExpression);
+        System.out.println("Выражение с правыми скобками: " + finalExpression);
     }
 
-    public static void mul_divide (Queue<Character> generator, Stack<Character> operators, Stack<Character> numbers, char op, char number) {
+    public static void mulDivide (Queue<Character> generator, Deque<Character> operators, Deque<Character> numbers, char op, char number) {
         generator.offer(operators.pop());
         generator.offer('(');
         generator.offer('(');
@@ -117,7 +119,7 @@ public class Left_Parentheses {
         generator.offer(')');
     }
 
-    public static void sum_sub (Queue<Character> generator, Stack<Character> numbers, char op, char number) {
+    public static void sumSub (Queue<Character> generator, Deque<Character> numbers, char op, char number) {
         generator.offer('(');
         generator.offer('(');
         generator.offer(numbers.pop());
@@ -126,7 +128,7 @@ public class Left_Parentheses {
         generator.offer(')');
     }
 
-    public static void last_exception (Queue<Character> generator, Stack<Character> operators, Stack<Character> numbers, char op, char number) {
+    public static void lastException (Queue<Character> generator, Deque<Character> operators, Deque<Character> numbers, char op, char number) {
         generator.offer(operators.pop());
         generator.offer('(');
         generator.offer(numbers.pop());

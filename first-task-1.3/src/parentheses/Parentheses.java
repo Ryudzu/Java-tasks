@@ -1,13 +1,11 @@
-package Parentheses;
-
-import com.sun.tools.javac.Main;
+package parentheses;
 
 import java.util.*;
 import java.util.logging.Logger;
 
 public class Parentheses {
 
-    private static final Logger logger = Logger.getLogger(Main.class.getName());
+    private static final Logger logger = Logger.getLogger(Parentheses.class.getName());
     public static void main(String[] args) {
 
         // Создание пустого стека и системы ввода с клавиатуры.

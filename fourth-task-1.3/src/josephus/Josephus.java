@@ -1,9 +1,15 @@
+package josephus;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Josephus {
+
+    private static final Logger logger = Logger.getLogger(Josephus.class.getName());
 
     public static void main(String[] args) {
 
@@ -15,10 +21,13 @@ public class Josephus {
         // Создание системы ввода с клавиатуры, где необходимо ввести количество человек и через какое число убивать каждого человека.
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Введите количество человек: ");
+
+        logger.log(Level.INFO, "Введите количество человек: ");
         int humans = input.nextInt();
-        System.out.print("Убивать через каждого: ");
+
+        logger.log(Level.INFO, "Убивать через каждого: ");
         int k = input.nextInt();
+
         String dead = "";
 
         // Добавляем в список позиции от 0 до humans - 1.
@@ -30,8 +39,7 @@ public class Josephus {
         // Все неудачные позиции, добавляются в очередь killed в правильном порядке.
 
         int pos = 0;
-        while (positions.size() != 1)
-        {
+        while (positions.size() != 1) {
             pos = (pos + k - 1) % positions.size();
             killed.offer(positions.get(pos));
             positions.remove(pos);
@@ -48,7 +56,7 @@ public class Josephus {
 
         // Вывод всех неудачных позиций и той позиции, в которой находится выживший.
 
-        System.out.println("Умерли под номерами: " + dead);
-        System.out.print("Выжил под номером: " + positions.get(0));
+        logger.log(Level.INFO, "Умерли под номерами: {0}", dead);
+        logger.log(Level.INFO, "Выжил под номером: {0}", positions.get(0));
     }
 }

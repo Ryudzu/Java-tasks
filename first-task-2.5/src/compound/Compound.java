@@ -1,16 +1,21 @@
+package compound;
+
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Compound {
+
+    private static final Logger logger = Logger.getLogger(Compound.class.getName());
 
     public static void main(String[] args) {
 
         // Создание системы ввода с клавиатуры.
-
-        System.out.print("Введите строку: ");
+        logger.log(Level.INFO, () -> "Введите строку: ");
         Scanner input = new Scanner(System.in);
 
         String s = input.nextLine();
-        System.out.println("Исходная строка: \"" + s + "\"");
+        logger.log(Level.INFO, () -> "Исходная строка: \"" + s + "\"");
 
         // Вызов функции, которая позволяет находить в строке составные слова, состоящие из двух других слов.
 
@@ -24,7 +29,7 @@ public class Compound {
         // в котором он их найдет и не допустит повторений этих слов.
 
         String[] list = str.split("([^а-яА-Я]\\s+)|_|\\s|([^а-яА-Я]+$)");
-        Set<String> compound_words = new LinkedHashSet<>();
+        Set<String> compoundWords = new LinkedHashSet<>();
 
         // Данный цикл позволяет пробежать и проверить все комбинации, содержащихся в массиве слов, если в результате конкатенации
         // выбранного слова list[i] со всеми возможными словами list[j] в массиве дадут слово, содержащееся в исходной строке, то идет добавление
@@ -33,15 +38,15 @@ public class Compound {
         for (int i = 0; i < list.length; i++) {
             for (int j = 0; j < list.length; j++) {
                 if (str.contains(list[i] + list[j]))
-                    compound_words.add(list[i] + list[j]);
+                    compoundWords.add(list[i] + list[j]);
             }
         }
 
         // Результат выполнения программы
 
-        if (!compound_words.isEmpty())
-            System.out.println("Найденные составные слова: " + String.join(", ", compound_words) + ".");
+        if (!compoundWords.isEmpty())
+            logger.log(Level.INFO, () -> "Найденные составные слова: " + String.join(", ", compoundWords) + ".");
         else
-            System.out.println("Составные слова не найдены.");
+            logger.log(Level.INFO, () -> "Составные слова не найдены.");
     }
 }

@@ -21,7 +21,6 @@ public class LeftParentheses {
         logger.log(Level.INFO, "Введите числовое выражение без левых скобок: ");
         String initialExpression = input.nextLine();
         String finalExpression = "";
-
         int digits = 0;
         int pairs = 0;
 
@@ -113,7 +112,7 @@ public class LeftParentheses {
         // Результат выполнения программы.
 
         logger.log(Level.INFO, () -> "Исходное выражение без правых скобок: " + initialExpression);
-        logger.log(Level.INFO, "Выражение с правыми скобками: " + finalExpression);
+        logger.log(Level.INFO, "Выражение с правыми скобками: {0}", finalExpression);
     }
 
     public static void mulDivide (Queue<Character> generator, Deque<Character> operators, Deque<Character> numbers, char op, char number) {

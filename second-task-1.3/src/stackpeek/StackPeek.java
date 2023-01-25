@@ -1,5 +1,6 @@
 package stackpeek;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class StackPeek {
@@ -22,7 +23,7 @@ public class StackPeek {
         try {
             return arr[top];
         } catch (Exception e) {
-            logger.info("Стек пустой");
+            logger.log(Level.INFO, () -> "Стек пустой");
             System.exit(0);
             return 0;
         }
@@ -36,8 +37,7 @@ public class StackPeek {
         stack.push(42);
 
         //Проверка работоспособности метода peek() класса Stack_peek
-
-        logger.info("Последнее добавленное число в Stack - " + stack.peek());
-
+        
+        logger.log(Level.INFO, () -> "Последний добавленный элемент в стек - " + stack.peek());
     }
 }

@@ -3,9 +3,9 @@ package heightmethods;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class heightMethods {
+public class HeightMethods {
 
-    private static final Logger logger = Logger.getLogger(heightMethods.class.getName());
+    private static final Logger logger = Logger.getLogger(HeightMethods.class.getName());
 
     // Создание корня дерева и метода addNode, с помощью которого можно построить дерево бинарного поиска.
 
@@ -69,7 +69,7 @@ public class heightMethods {
 
     public static void main(String[] args) {
 
-        heightMethods tree = new heightMethods();
+        HeightMethods tree = new HeightMethods();
 
         /*
             Дерево будет выглядеть следующим образом:

@@ -66,3 +66,35 @@ ____
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afourth-task-2.5%2Fsrc%2FVersion.java
 
 ____
+
+### Первая задача из раздела 3.2 ###
+
+1) Задача 3.2.6: Добавьте в класс BST метод height() для вычисления высоты дерева. Разработайте две реализации: рекурсивный метод и метод наподобие size(), для работы
+которого нужно дополнительное поле в каждом узле дерева (требующего линейного объема памяти и константного времени на запрос).
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/first-task-3.2/src/heightmethods
+3) Время выполнения "план-факт": план - 4 часа; факт - 4 часа и 20 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afirst-task-3.2%2Fsrc%2Fheightmethods%2FHeightMethods.java
+
+### Вторая задача из раздела 3.2 ###
+
+1) Задача 3.2.32: Сертификация. Напишите метод isBST(), который принимает в качестве аргумента узел Node и возвращает true, если указанный узел является корнем дерева бинарного поиска, и false в противном случае.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/second-task-3.2/src/certification
+3) Время выполнения "план-факт": план - 5 часов; факт - 3 часа и 50 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-3.2%2Fsrc%2Fcertification%2FCertification.java
+
+### Третья задача из раздела 3.2 ###
+
+1) Задача 3.2.25: Идеальная балансировка. Напишите программу, которая вставляет набор ключей в первоначальное пустое ДБП так, что полученное дерево эквивалентно бинарному поиску - т.е. последовательность сравнений, выполняемых при поиске любого ключа в ДБП, совпадает с последовательностью сравнений, выполняемых при бинарном
+поиске в том же наборе ключей.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/third-task-3.2/src/perfectbalance
+3) Время выполнения "план-факт": план - 3 часа; факт - 2 часа и 5 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Athird-task-3.2%2Fsrc%2Fperfectbalance%2FPerfectBalance.java
+
+### Четвертая задача из раздела 3.2 ###
+
+1) Задача 3.2.13: Приведите нерекурсивные реализации методов get() и put() для класса BST.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/fourth-task-3.2/src/nonrecursivemethods
+3) Время выполнения "план-факт": план - 1 час; факт: 40 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afourth-task-3.2%2Fsrc%2Fnonrecursivemethods%2FNonRecursive.java
+
+____

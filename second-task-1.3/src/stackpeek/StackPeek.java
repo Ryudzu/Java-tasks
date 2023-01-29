@@ -25,7 +25,7 @@ public class StackPeek {
         try {
             return arr[top];
         } catch (Exception e) {
-            logger.log(Level.INFO, () -> "Стек пустой");
+            logger.log(Level.INFO, () -> "Стек пустой.");
             System.exit(0);
             return 0;
         }
@@ -41,32 +41,28 @@ public class StackPeek {
         logger.log(Level.INFO, "Выберите, какую операцию хотите произвести\n1. Добавление элементов в стек.\n2. Показать последний элемент.");
         int choice = input.nextInt();
 
-        switch (choice) {
-            case 1:
-                logger.log(Level.INFO,"Введите числа, которые хотите добавить в стек: ", size);
-                for (int i = 0; i < size; i++) {
-                    int element = input.nextInt();
-                    stack.push(element);
-                }
+        if (choice == 1) {
+            logger.log(Level.INFO, "Введите числа, которые хотите добавить в стек: ");
+            for (int i = 0; i < size; i++) {
+                int element = input.nextInt();
+                stack.push(element);
+            }
 
-                logger.log(Level.INFO,"Хотите узнать последний элемент стека?\n1. Да.\n2. Нет ");
-                int choiceNext = input.nextInt();
-                switch (choiceNext) {
-                    case 1:
-                        //Проверка работоспособности метода peek() класса Stack_peek
-                        logger.log(Level.INFO, () -> "Последний добавленный элемент в стек - " + stack.peek());
-                        break;
+            logger.log(Level.INFO, "Хотите узнать последний элемент стека?\n1. Да.\n2. Нет ");
+            int choiceNext = input.nextInt();
+            if (choiceNext == 1) {
 
-                    case 2:
-                        break;
+                //Проверка работоспособности метода peek() класса Stack_peek
 
-                    default:
-                        logger.log(Level.INFO, "Такой функции не существует.");
-                }
-
-                break;
-            default:
+                logger.log(Level.INFO, () -> "Последний добавленный элемент в стек - " + stack.peek());
+            } else if (choiceNext == 2) {
+                logger.log(Level.INFO, () -> "До свидания!");
+            } else {
                 logger.log(Level.INFO, "Такой функции не существует.");
-        }
+            }
+        } else if (choice == 2)
+            logger.log(Level.INFO, () -> "Последний добавленный элемент в стек - " + stack.peek());
+        else
+            logger.log(Level.INFO, "Такой функции не существует.");
     }
 }

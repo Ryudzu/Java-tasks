@@ -50,16 +50,17 @@ public class StackPeek {
 
             logger.log(Level.INFO, "Хотите узнать последний элемент стека?\n1. Да.\n2. Нет ");
             int choiceNext = input.nextInt();
-            if (choiceNext == 1) {
+            if (choiceNext == 1)
 
-                //Проверка работоспособности метода peek() класса Stack_peek
+                //Проверка работоспособности метода peek() класса StackPeek.
 
                 logger.log(Level.INFO, () -> "Последний добавленный элемент в стек - " + stack.peek());
-            } else if (choiceNext == 2) {
+
+            else if (choiceNext == 2)
                 logger.log(Level.INFO, () -> "До свидания!");
-            } else {
+            else
                 logger.log(Level.INFO, "Такой функции не существует.");
-            }
+
         } else if (choice == 2)
             logger.log(Level.INFO, () -> "Последний добавленный элемент в стек - " + stack.peek());
         else

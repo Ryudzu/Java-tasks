@@ -1,6 +1,7 @@
 package dedupmethod;
 
 import java.util.Arrays;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -12,7 +13,16 @@ public class DedupMethod {
 
         // Создание массива строк, который необходимо отсортировать и исключить дубликаты.
 
-        String[] a = {"бпва", "вонке", "афыув", "гсячйфц", "ервапыфв", "афыув", "дорппк"};
+        Scanner input = new Scanner(System.in);
+        logger.log(Level.INFO, () -> "Введите размер массива: ");
+        int size = input.nextInt();
+        String[] a = new String[size];
+
+        logger.log(Level.INFO, () -> "Введите строковые элементы, чтобы заполнить массив:");
+        input.nextLine();
+        for (int i = 0; i < size; i++)
+            a[i] = input.nextLine();
+
         logger.log(Level.INFO, "Исходный массив строк: {0}", Arrays.toString(a));
 
         // Вызов метода dedup() согласно заданию и замена исходного массива строк a[] на обновленный.

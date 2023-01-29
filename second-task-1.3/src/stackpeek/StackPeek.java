@@ -1,5 +1,6 @@
 package stackpeek;
 
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,7 +17,8 @@ public class StackPeek {
     }
 
     public void push(int data) {
-        arr[++top] = data;
+        top += 1;
+        arr[top] = data;
     }
 
     public int peek() {
@@ -30,14 +32,41 @@ public class StackPeek {
     }
     public static void main(String[] args) {
 
-        StackPeek stack = new StackPeek(5);
-        stack.push(10);
-        stack.push(1);
-        stack.push(52);
-        stack.push(42);
+        Scanner input = new Scanner(System.in);
 
-        //Проверка работоспособности метода peek() класса Stack_peek
-        
-        logger.log(Level.INFO, () -> "Последний добавленный элемент в стек - " + stack.peek());
+        logger.log(Level.INFO, () -> "Введите размер стека: ");
+        int size = input.nextInt();
+        StackPeek stack = new StackPeek(size);
+
+        logger.log(Level.INFO, "Выберите, какую операцию хотите произвести\n1. Добавление элементов в стек.\n2. Показать последний элемент.");
+        int choice = input.nextInt();
+
+        switch (choice) {
+            case 1:
+                logger.log(Level.INFO,"Введите числа, которые хотите добавить в стек: ", size);
+                for (int i = 0; i < size; i++) {
+                    int element = input.nextInt();
+                    stack.push(element);
+                }
+
+                logger.log(Level.INFO,"Хотите узнать последний элемент стека?\n1. Да.\n2. Нет ");
+                int choiceNext = input.nextInt();
+                switch (choiceNext) {
+                    case 1:
+                        //Проверка работоспособности метода peek() класса Stack_peek
+                        logger.log(Level.INFO, () -> "Последний добавленный элемент в стек - " + stack.peek());
+                        break;
+
+                    case 2:
+                        break;
+
+                    default:
+                        logger.log(Level.INFO, "Такой функции не существует.");
+                }
+
+                break;
+            default:
+                logger.log(Level.INFO, "Такой функции не существует.");
+        }
     }
 }

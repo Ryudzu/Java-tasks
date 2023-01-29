@@ -63,7 +63,6 @@ public class Certification {
         root.rightChild.rightChild = new Node(85, "F");
 
         tree.inOrder(root);
-        System.out.println();
 
         // Проверка работоспособности метода isBST.
 

@@ -1,5 +1,7 @@
 package heightmethods;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -14,34 +16,30 @@ public class HeightMethods {
 
         Node newNode = new Node(key, name);
 
-        if (root == null) {
+        if (root == null)
             root = newNode;
-        } else {
+        else {
+            
             Node currentNode = root;
             Node parent;
+
             while (true) {
                 parent = currentNode;
                 if (key < currentNode.key) {
-
-                    // Вычисление высоты по методу size()
-                    currentNode.height = 1 + heightSize(currentNode.leftChild) + heightSize(currentNode.rightChild);
-
                     currentNode = currentNode.leftChild;
                     if (currentNode == null) {
                         parent.leftChild = newNode;
                         return;
                     }
                 } else if (key > currentNode.key) {
-
-                    // Вычисление высоты по методу size()
-                    currentNode.height = 1 + heightSize(currentNode.leftChild) + heightSize(currentNode.rightChild);
-
                     currentNode = currentNode.rightChild;
                     if (currentNode == null) {
                         parent.rightChild = newNode;
                         return;
                     }
-                } else if (key == currentNode.key) {
+                }
+
+                if (key == currentNode.key) {
                     currentNode.name = name;
                     return;
                 }
@@ -58,13 +56,35 @@ public class HeightMethods {
         return 1 + Math.max(heightRec(currentNode.leftChild), heightRec(currentNode.rightChild));
     }
 
-    // Метод вычисления высоты дерева на подобии метода size().
+    // Нерекурсивный метод вычисления высоты дерева.
 
-    public int heightSize(Node currentNode) {
+    public static int heightSize(Node currentNode) {
         if (currentNode == null)
             return 0;
 
-        return currentNode.height;
+        Queue<Node> queue = new ArrayDeque<>();
+        queue.add(currentNode);
+
+        Node front;
+        int height = -1;
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+
+            while (size > 0) {
+                front = queue.poll();
+
+                if (front.leftChild != null)
+                    queue.add(front.leftChild);
+
+                if (front.rightChild != null)
+                    queue.add(front.rightChild);
+
+                size--;
+            }
+            height++;
+        }
+        return height;
     }
 
     public static void main(String[] args) {
@@ -103,12 +123,12 @@ public class HeightMethods {
 
 class Node {
 
-    int key;
-    int height;
-    String name;
+    protected int key;
+    protected int height;
+    protected String name;
 
-    Node leftChild;
-    Node rightChild;
+    protected Node leftChild;
+    protected Node rightChild;
 
     public Node (int key, String name) {
         this.key = key;

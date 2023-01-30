@@ -13,11 +13,13 @@ public class NonRecursive {
 
         Node newNode = new Node(key, name);
 
-        if (root == null) {
+        if (root == null)
             root = newNode;
-        } else {
+        else {
+
             Node currentNode = root;
             Node parent;
+
             while (true) {
                 parent = currentNode;
                 if (key < currentNode.key) {
@@ -32,7 +34,9 @@ public class NonRecursive {
                         parent.rightChild = newNode;
                         return;
                     }
-                } else if (key == currentNode.key) {
+                }
+
+                if (key == currentNode.key) {
                     currentNode.name = name;
                     return;
                 }
@@ -95,16 +99,14 @@ public class NonRecursive {
 
 class Node {
 
-    int key;
-    int height;
-    String name;
+    protected int key;
+    protected String name;
 
-    Node leftChild;
-    Node rightChild;
+    protected Node leftChild;
+    protected Node rightChild;
 
     public Node (int key, String name) {
         this.key = key;
         this.name = name;
-        this.height = 0;
     }
 }

@@ -14,9 +14,10 @@ public class PerfectBalance {
 
         Node newNode = new Node(key, name);
 
-        if (root == null) {
+        if (root == null)
             root = newNode;
-        } else {
+        else {
+
             Node currentNode = root;
             Node parent;
 
@@ -34,7 +35,9 @@ public class PerfectBalance {
                         parent.leftChild = newNode;
                         return;
                     }
-                } else if (currentNode.key == key) {
+                }
+
+                if (currentNode.key == key) {
                     currentNode.name = name;
                     return;
                 }
@@ -109,11 +112,11 @@ public class PerfectBalance {
 
 class Node {
 
-    String name;
-    int key;
+    protected String name;
+    protected int key;
 
-    Node leftChild;
-    Node rightChild;
+    protected Node leftChild;
+    protected Node rightChild;
 
     public Node (int key, String name) {
         this.name = name;

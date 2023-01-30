@@ -72,11 +72,11 @@ public class Certification {
 
 class Node {
 
-    int key;
-    String name;
+    protected int key;
+    protected String name;
 
-    Node leftChild;
-    Node rightChild;
+    protected Node leftChild;
+    protected Node rightChild;
 
     public Node (int key, String name) {
         this.key = key;

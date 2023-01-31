@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 
 public class ChainingMethod {
 
-    public final static Logger logger = Logger.getLogger(ChainingMethod.class.getName());
+    public static final Logger logger = Logger.getLogger(ChainingMethod.class.getName());
 
     // Создание массива buckets на основе типа данных HashNode, а также поле, которое будет получать размер этого массива.
     /*

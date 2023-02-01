@@ -109,3 +109,10 @@ ____
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/first-task-3.4/src/chainingmethod
 3) Время выполнения "план-факт": план - 2 часа; факт - 1 час и 55 минут.
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afirst-task-3.4%2Fsrc%2Fchainingmethod%2FChainingMethod.java
+
+### Вторая задача из раздела 3.4 ###
+
+1) Задача 3.4.9: Реализуйте энергичный метод delete() для класса SeparateChainingHashST.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/second-task-3.4/src/deletemethod
+3) Время выполнения "план-факт": план - 1 час; факт - 50 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-3.4%2Fsrc%2Fdeletemethod%2FSeparateChainingHashST.java

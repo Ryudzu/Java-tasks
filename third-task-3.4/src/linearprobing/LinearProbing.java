@@ -51,7 +51,7 @@ public class LinearProbing {
 
     public void put(char key, int value) {
 
-        if (counter == maxSize)
+        if (counter >= maxSize)
             resize(2*maxSize);
 
         int i;

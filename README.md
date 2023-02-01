@@ -116,3 +116,10 @@ ____
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/second-task-3.4/src/deletemethod
 3) Время выполнения "план-факт": план - 1 час; факт - 50 минут.
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-3.4%2Fsrc%2Fdeletemethod%2FSeparateChainingHashST.java
+
+### Третья задача из раздела 3.4 ###
+
+1) Задача 3.4.10: Вставьте ключи E A S Y Q U T I O N в указанном порядке в первоначально пустую таблицу с M = 5 с линейным опробованием. Для преобразования k-й буквы алфавита в индекс таблицы используйте хеш-функцию (11*k)%M. Выполните упражнение еще раз для M = 10.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/third-task-3.4/src/linearprobing
+3) Время выполнения "план-факт": план - 2 часа; факт - 2 часа и 10 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Athird-task-3.4%2Fsrc%2Flinearprobing%2FLinearProbing.java

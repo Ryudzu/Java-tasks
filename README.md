@@ -123,3 +123,10 @@ ____
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/third-task-3.4/src/linearprobing
 3) Время выполнения "план-факт": план - 2 часа; факт - 2 часа и 10 минут.
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Athird-task-3.4%2Fsrc%2Flinearprobing%2FLinearProbing.java
+
+### Четвертая задача из раздела 3.4 ###
+
+1) Задача 3.4.26: Ленивое удаление для линейного опробования. Добавьте в класс LinearProbingHashST метод delete(), удаляющий пару ключ-значение с помощью занесения значения null (но без удаления ключа). Такая пара удаляется из таблицы при изменении ее размера методом resize(). Главная проблема - решить, когда вызвать resize().
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/fourth-task-3.4/src/deletemethod
+3) Время выполнения "план-факт": план - 1 час и 30 минут; факт - 1 час.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afourth-task-3.4%2Fsrc%2Fdeletemethod%2FLinearProbingHashST.java

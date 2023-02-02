@@ -13,7 +13,7 @@ public class LSDsorting {
         String[] strKeys = {"no", "is", "th", "ti", "fo", "al", "go", "pe", "to", "co", "to", "th", "ai", "of", "th", "pa"};
         logger.log(Level.INFO, "До применения LSD-сортировки: {0}", Arrays.toString(strKeys));
 
-        strKeys = LSDsort(strKeys);
+        strKeys = lsdSort(strKeys);
         logger.log(Level.INFO, "После применения LSD-сортировки: {0}", Arrays.toString(strKeys));
     }
 
@@ -62,7 +62,7 @@ public class LSDsorting {
     // countSort, в который передается сам массив строковых ключей, а также их общая позиция последних символов поскольку размер строк одинаковый.
     // countSort выполняется такое количество раз, равное длине строкового ключа и каждый раз обновляет массив.
 
-    public static String[] LSDsort(String[] strKeys) {
+    public static String[] lsdSort(String[] strKeys) {
         int strMaxSize = strKeys[0].length();
         for (int i = strMaxSize - 1; i >= 0; i--)
             strKeys = countSort(strKeys, i);

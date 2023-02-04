@@ -139,3 +139,10 @@ ____
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/first-task-5.1/src/lsdsorting
 3) Время выполнения "план-факт": план - 3 часа; факт - 2 часа и 30 минут.
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afirst-task-5.1%2Fsrc%2Flsdsorting%2FLSDsorting.java
+
+### Вторая задача из раздела 5.1 ###
+
+1) Задача 5.1.3: Приведите трассировку работы MSD-сортировки для строковых ключей no is th ti fo al go pe to co to th ai of th pa.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/second-task-5.1/src/msdsorting
+3) Время выполнения "план-факт": план - 3 часа; факт - 4 часа и 20 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-5.1%2Fsrc%2Fmsdsorting%2FMSDsorting.java

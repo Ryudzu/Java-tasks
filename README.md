@@ -153,3 +153,10 @@ ____
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/third-task-5.1/src/randomlicenseplates
 3) Время выполнения "план-факт": план - 1 час и 30 минут; факт - 1 час.
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Athird-task-5.1%2Fsrc%2Frandomlicenseplates%2FRandomLicensePlates.java
+
+### Четвертая задача из раздела 5.1 ###
+
+1) Задача 5.1.20: Случайные слова фиксированной длины. Напишите статический метод randomFixedLengthWords, который принимает в качестве аргументов целочисленные значения N и W и возвращает массив N строковых значений из W символов алфавита.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/fourth-task-5.1/src/randomfixedlength
+3) Время выполнения "план-факт": план - 30 минут; факт - 20 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afourth-task-5.1%2Fsrc%2Frandomfixedlength%2FRandomFixedLengthWords.java

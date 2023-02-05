@@ -17,6 +17,8 @@ public class Domain {
         logger.log(Level.INFO, () -> "Введите список доменов: ");
         String dom = input.nextLine();
 
+        // Результат выполнения программы.
+
         compareTo(dom);
     }
 
@@ -30,25 +32,34 @@ public class Domain {
         // Создание массива, куда будут записываться домены с обратным именем.
 
         String[] domArrReversed = new String[domArr.length];
+
+        // Перебор каждого домена из domArr и разбиение его по точкам, и соответственно запись его элементов во временный массив.
+        // После чего идет сортировка первого и последнего элемента пузырьковым способом, который прописан в методе swap(), и запись
+        // этого обратного домена через точку с помощью String.join() в массив доменов с обратным именем domArrReversed.
+
         int i = 0;
-
-        // Перебор каждого домена из dom_arr и разбиение его по точкам, и соответственно запись его элементов во временный массив.
-        // После чего идет сортировка первого и последнего элемента пузырьковым методом, и запись этого обратного домена через точку с помощью
-        // String.join() в массив доменов с обратным именем dom_arr_reversed.
-
         for (String domain : domArr) {
             String[] domArrDomainTemp = domain.split("\\.");
 
-            String temp = domArrDomainTemp[0];
-            domArrDomainTemp[0] = domArrDomainTemp[domArrDomainTemp.length - 1];
-            domArrDomainTemp[domArrDomainTemp.length - 1] = temp;
+            int left = 0;
+            int right = domArrDomainTemp.length - 1;
+
+            swap(domArrDomainTemp, left, right);
 
             domArrReversed[i] = String.join(".", domArrDomainTemp);
             i++;
         }
 
-        // Результат выполнения программы.
-
         logger.log(Level.INFO, "Упорядоченный список обратных доменов: {0}", Arrays.toString(domArrReversed));
+    }
+
+    public static void swap(String[] domArrDomainTemp, int left, int right) {
+        while (left <= right) {
+            String temp = domArrDomainTemp[left];
+            domArrDomainTemp[left] = domArrDomainTemp[right];
+            domArrDomainTemp[right] = temp;
+            left++;
+            right--;
+        }
     }
 }

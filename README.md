@@ -146,3 +146,10 @@ ____
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/second-task-5.1/src/msdsorting
 3) Время выполнения "план-факт": план - 3 часа; факт - 4 часа и 20 минут.
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-5.1%2Fsrc%2Fmsdsorting%2FMSDsorting.java
+
+### Третья задача из раздела 5.1 ###
+
+1) Задача 5.1.19: Случайные автомобильные номера. Напишите статический метод randomPlatesCA, который принимает в качестве аргумента целое значение N и возвращает массив из N значений типа String, которые представляют собой автомобильные номера вроде приведенных в примерах данного раздела (калифорнийские номера).
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/third-task-5.1/src/randomlicenseplates
+3) Время выполнения "план-факт": план - 1 час и 30 минут; факт - 1 час.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Athird-task-5.1%2Fsrc%2Frandomlicenseplates%2FRandomLicensePlates.java

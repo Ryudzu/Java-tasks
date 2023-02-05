@@ -15,11 +15,11 @@ public class RandomLicensePlates {
 
         Scanner input = new Scanner(System.in);
         logger.log(Level.INFO, "Введите размер массива: ");
-        int N = input.nextInt();
+        int size = input.nextInt();
 
         // Результат выполнения программы.
 
-        String[] result = randomPlatesCA(N);
+        String[] result = randomPlatesCA(size);
         logger.log(Level.INFO, "Случайно сгенерированные калифорнийские номера автомобилей: {0}", Arrays.toString(result));
     }
 
@@ -31,8 +31,8 @@ public class RandomLicensePlates {
     // где был вызван метод sorted() позволяющий отсортировать его по заданному критерию и на выходе идет преобразование этого потока обратно
     // в массив строк.
 
-    public static String[] randomPlatesCA(int N) {
-        String[] result = new String[N];
+    public static String[] randomPlatesCA(int size) {
+        String[] result = new String[size];
         for (int i = 0; i < result.length; i++)
             result[i] = String.format("%d%s%s", randomFirstNumber(), randomString(), randomLastNumbers());
 

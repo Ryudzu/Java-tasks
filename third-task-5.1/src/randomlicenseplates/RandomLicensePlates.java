@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 public class RandomLicensePlates {
 
     private static final Logger logger = Logger.getLogger(RandomLicensePlates.class.getName());
+    private static Random rand = new Random();
 
     public static void main(String[] args) {
 
@@ -41,18 +42,16 @@ public class RandomLicensePlates {
     // Генерация случайного первого числа.
 
     public static int randomFirstNumber() {
-        Random rNum = new Random();
-        return rNum.nextInt(1, 9);
+        return rand.nextInt(1, 9);
     }
 
     // Генерация случайных трех букв после первого числа.
 
     public static String randomString() {
         StringBuilder rStr = new StringBuilder();
-        Random rChar = new Random();
 
         for (int i = 0; i < 3; i++)
-            rStr.append((char)(rChar.nextInt(26) + 'A'));
+            rStr.append((char)(rand.nextInt(26) + 'A'));
 
         return rStr.toString();
     }
@@ -61,10 +60,9 @@ public class RandomLicensePlates {
 
     public static String randomLastNumbers() {
         StringBuilder rNumsStr = new StringBuilder();
-        Random rNum = new Random();
 
         for (int i = 0; i < 3; i++)
-            rNumsStr.append(rNum.nextInt(10));
+            rNumsStr.append(rand.nextInt(10));
 
         return rNumsStr.toString();
     }

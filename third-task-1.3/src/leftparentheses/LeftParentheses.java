@@ -82,11 +82,12 @@ public class LeftParentheses {
                         else if (isLastException(operators, pairsAmount))
                             lastException(generator, operators, numbers, op, number);
 
+                        continue;
+                }
 
                 // Когда оба стека стали пустыми, то последним шагом является дописание оставшихся в конце выражения изначальных правых скобок.
 
-                } else
-                    generator.offer(')');
+                generator.offer(')');
             }
         }
 
@@ -103,10 +104,7 @@ public class LeftParentheses {
     }
 
     public static boolean isOperator(char initialExpression) {
-        if (initialExpression == '+' || initialExpression == '-' || initialExpression == '/' || initialExpression == '*')
-            return true;
-        else
-            return false;
+        return initialExpression == '+' || initialExpression == '-' || initialExpression == '/' || initialExpression == '*';
     }
 
     public static int pairsCount(String initialExpression) {
@@ -124,31 +122,19 @@ public class LeftParentheses {
     }
 
     public static boolean areStacksEmpty(Deque<Character> operators, Deque<Character> numbers) {
-        if (!operators.isEmpty() && !numbers.isEmpty())
-            return true;
-        else
-            return false;
+        return !operators.isEmpty() && !numbers.isEmpty();
     }
 
     public static boolean isMulDivideMethod(Deque<Character> operators, int pairsAmount) {
-        if (!operators.isEmpty() && pairsAmount != 0)
-            return true;
-        else
-            return false;
+        return !operators.isEmpty() && pairsAmount != 0;
     }
 
     public static boolean isSumSubMethod(Deque<Character> operators, int pairsAmount) {
-        if (operators.isEmpty() && pairsAmount != 0)
-            return true;
-        else
-            return false;
+        return operators.isEmpty() && pairsAmount != 0;
     }
 
     public static boolean isLastException(Deque<Character> operators, int pairsAmount) {
-        if (!operators.isEmpty() && pairsAmount == 0)
-            return true;
-        else
-            return false;
+        return !operators.isEmpty() && pairsAmount == 0;
     }
 
     public static void mulDivide(Queue<Character> generator, Deque<Character> operators, Deque<Character> numbers, char op, char number) {

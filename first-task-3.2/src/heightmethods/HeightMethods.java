@@ -9,42 +9,47 @@ public class HeightMethods {
 
     private static final Logger logger = Logger.getLogger(HeightMethods.class.getName());
 
-    // Создание корня дерева и метода addNode, с помощью которого можно построить дерево бинарного поиска.
+    // Создание класса Node, который позволит хранить данные и ссылаться на левого предка и правого предка бинарного дерева.
 
-    Node root;
-    public void addNode (int key, String name) {
+    class Node {
 
-        Node newNode = new Node(key, name);
+        private final int key;
+        private String name;
 
-        if (root == null)
-            root = newNode;
-        else {
-            
-            Node currentNode = root;
-            Node parent;
+        private Node leftChild;
+        private Node rightChild;
 
-            while (true) {
-                parent = currentNode;
-                if (key < currentNode.key) {
-                    currentNode = currentNode.leftChild;
-                    if (currentNode == null) {
-                        parent.leftChild = newNode;
-                        return;
-                    }
-                } else if (key > currentNode.key) {
-                    currentNode = currentNode.rightChild;
-                    if (currentNode == null) {
-                        parent.rightChild = newNode;
-                        return;
-                    }
-                }
-
-                if (key == currentNode.key) {
-                    currentNode.name = name;
-                    return;
-                }
-            }
+        public Node (int key, String name) {
+            this.key = key;
+            this.name = name;
         }
+    }
+
+    // Создание корня дерева и рекурсивного метода addNode, с помощью которого можно построить дерево бинарного поиска.
+
+    private static Node root;
+    public void addNode (int key, String name) {
+        if (root == null)
+            root = new Node(key, name);
+        else
+            spotToAdd(key, name, root);
+    }
+
+    public Node spotToAdd(int key, String name, Node currentNode) {
+        if (currentNode == null)
+            return new Node(key, name);
+
+        if (key == currentNode.key) {
+            currentNode.name = name;
+            return new Node(key, currentNode.name);
+        }
+
+        if (key < currentNode.key)
+            currentNode.leftChild = spotToAdd(key, name, currentNode.leftChild);
+        else if (key > currentNode.key)
+            currentNode.rightChild = spotToAdd(key, name, currentNode.rightChild);
+
+        return currentNode;
     }
 
     // Рекурсивный метод вычисления высоты дерева.
@@ -58,7 +63,7 @@ public class HeightMethods {
 
     // Нерекурсивный метод вычисления высоты дерева.
 
-    public static int heightSize(Node currentNode) {
+    public int heightSize(Node currentNode) {
         if (currentNode == null)
             return 0;
 
@@ -114,25 +119,7 @@ public class HeightMethods {
 
         // Результат выполнения методов.
 
-        logger.log(Level.INFO, "Результат выполнения рекурсивного метода: {0}", tree.heightRec(tree.root));
-        logger.log(Level.INFO, "Результат выполнения метода наподобии size(): {0}", tree.heightSize(tree.root));
-    }
-}
-
-// Создание класса Node, который позволит хранить данные и ссылаться на левого предка и правого предка бинарного дерева.
-
-class Node {
-
-    protected int key;
-    protected int height;
-    protected String name;
-
-    protected Node leftChild;
-    protected Node rightChild;
-
-    public Node (int key, String name) {
-        this.key = key;
-        this.name = name;
-        this.height = 0;
+        logger.log(Level.INFO, "Результат выполнения рекурсивного метода: {0}", tree.heightRec(root));
+        logger.log(Level.INFO, "Результат выполнения метода наподобии size(): {0}", tree.heightSize(root));
     }
 }

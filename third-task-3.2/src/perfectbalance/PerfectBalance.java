@@ -8,42 +8,44 @@ public class PerfectBalance {
 
     private static final Logger logger = Logger.getLogger(PerfectBalance.class.getName());
 
-    Node root;
+    class Node {
+
+        private final int key;
+        private String name;
+
+        private Node leftChild;
+        private Node rightChild;
+
+        public Node (int key, String name) {
+            this.key = key;
+            this.name = name;
+        }
+    }
+
+    private Node root;
 
     public void addNode (int key, String name) {
-
-        Node newNode = new Node(key, name);
-
         if (root == null)
-            root = newNode;
-        else {
+            root = new Node(key, name);
+        else
+            spotToAdd(key, name, root);
+    }
 
-            Node currentNode = root;
-            Node parent;
+    public Node spotToAdd(int key, String name, Node currentNode) {
+        if (currentNode == null)
+            return new Node(key, name);
 
-            while (true) {
-                parent = currentNode;
-                if (currentNode.key < key) {
-                    currentNode = currentNode.rightChild;
-                    if (currentNode == null) {
-                        parent.rightChild = newNode;
-                        return;
-                    }
-                } else if (currentNode.key > key) {
-                    currentNode = currentNode.leftChild;
-                    if (currentNode == null) {
-                        parent.leftChild = newNode;
-                        return;
-                    }
-                }
-
-                if (currentNode.key == key) {
-                    currentNode.name = name;
-                    return;
-                }
-            }
+        if (key == currentNode.key) {
+            currentNode.name = name;
+            return new Node(key, currentNode.name);
         }
 
+        if (key < currentNode.key)
+            currentNode.leftChild = spotToAdd(key, name, currentNode.leftChild);
+        else if (key > currentNode.key)
+            currentNode.rightChild = spotToAdd(key, name, currentNode.rightChild);
+
+        return currentNode;
     }
 
     public static void sortingWords(PerfectBalance tree, String[] a) {
@@ -111,19 +113,4 @@ public class PerfectBalance {
 
         sortingWords(tree, a);
     }
-}
-
-class Node {
-
-    protected String name;
-    protected int key;
-
-    protected Node leftChild;
-    protected Node rightChild;
-
-    public Node (int key, String name) {
-        this.name = name;
-        this.key = key;
-    }
-
 }

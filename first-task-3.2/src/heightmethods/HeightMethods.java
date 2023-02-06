@@ -27,7 +27,7 @@ public class HeightMethods {
 
     // Создание корня дерева и рекурсивного метода addNode, с помощью которого можно построить дерево бинарного поиска.
 
-    private static Node root;
+    private Node root;
     public void addNode (int key, String name) {
         if (root == null)
             root = new Node(key, name);
@@ -119,7 +119,7 @@ public class HeightMethods {
 
         // Результат выполнения методов.
 
-        logger.log(Level.INFO, "Результат выполнения рекурсивного метода: {0}", tree.heightRec(root));
-        logger.log(Level.INFO, "Результат выполнения метода наподобии size(): {0}", tree.heightSize(root));
+        logger.log(Level.INFO, "Результат выполнения рекурсивного метода: {0}", tree.heightRec(tree.root));
+        logger.log(Level.INFO, "Результат выполнения метода наподобии size(): {0}", tree.heightSize(tree.root));
     }
 }

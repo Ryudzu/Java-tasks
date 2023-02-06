@@ -5,14 +5,14 @@
 скобок. Например, программа должна вывести true для  [()]{}{[()()]()} и false для [(]).
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/first-task-1.3/src/parentheses
 3) Время выполнения "план-факт": план - 1 час; факт - 23 минуты.
-4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afirst-task-1.3%2Fsrc%2FParentheses.java
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afirst-task-1.3%2Fsrc%2Fparentheses%2FParentheses.java
 
 ### Вторая задача из раздела 1.3 ###
 
 1) Задача 1.3.7: Добавьте в класс Stack метод peek(), который возвращает элемент, занесенный в стек последним (без выталкивания).
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/second-task-1.3/src/stackpeek
 3) Время выполнения "план-факт": план - 30 минут; факт - 15 минут.
-4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-1.3%2Fsrc%2FStack_peek.java
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-1.3%2Fsrc%2Fstackpeek%2FStackPeek.java
 
 ### Третья задача из раздела 1.3 ###
 
@@ -20,7 +20,7 @@
 недостающими скобками. Например, для входных данных 1+2)\*3-4)\*5-6))) программа должна вывести ((1+2)\*((3-4)\*(5-6))).
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/third-task-1.3/src/leftparentheses
 3) Время выполнения "план-факт": план - 5 часов; факт - 3 часа и 45 минут.
-4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Athird-task-1.3%2Fsrc%2FLeft_Parentheses.java
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Athird-task-1.3%2Fsrc%2Fleftparentheses%2FLeftParentheses.java
 
 ### Четвертая задача из раздела 1.3 ###
 
@@ -29,7 +29,7 @@
 Напишите клиент Josephus для класса Queue, который принимает из командной строки числа N и M и выводит порядок, в котором выбывают люди.
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/fourth-task-1.3/src/josephus
 3) Время выполнения "план-факт": план - 2 часа; факт - 1 час и 20 минут.
-4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afourth-task-1.3%2Fsrc%2FJosephus.java
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afourth-task-1.3%2Fsrc%2Fjosephus%2FJosephus.java
 
 ____
 
@@ -39,14 +39,14 @@ ____
 имеются слова "пар", "ковка" и "парковка", то "парковка" - составное слово.
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/first-task-2.5/src/compound
 3) Время выполнения "план-факт": план - 1 час; факт - 1 час и 15 минут.
-4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afirst-task-2.5%2Fsrc%2FCompound.java
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afirst-task-2.5%2Fsrc%2Fcompound%2FCompound.java
 
 ### Вторая задача из раздела 2.5 ###
 
 1) Задача 2.5.4: Реализуйте метод String[] dedup (String[] a), который возвращает объекты из a[] в упорядоченном виде, без повторяющихся элементов.
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/second-task-2.5/src/dedupmethod
 3) Время выполнения "план-факт": план - 40 минут; факт - 30 минут.
-4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-2.5%2Fsrc%2FDedup_Method.java
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-2.5%2Fsrc%2Fdedupmethod%2FDedupMethod.java
 
 ### Третья задача из раздела 2.5 ###
 
@@ -55,7 +55,7 @@ ____
 из стандартного ввода и выводит упорядоченный список обратных доменных имен.
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/third-task-2.5/src/domain
 3) Время выполнения "план-факт": план - 2 часа; факт - 1 час и 45 минут.
-4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Athird-task-2.5%2Fsrc%2FDomain.java
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Athird-task-2.5%2Fsrc%2Fdomain%2FDomain.java
 
 ### Четвертая задача из раздела 2.5 ###
 
@@ -63,7 +63,7 @@ ____
 чтобы версия 115.1.1 была меньше, чем 115.10.1.
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/fourth-task-2.5/src/version
 3) Время выполнения "план-факт": план - 30 минут; факт - 15 минут.
-4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afourth-task-2.5%2Fsrc%2FVersion.java
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afourth-task-2.5%2Fsrc%2Fversion%2FVersion.java
 
 ____
 
@@ -153,3 +153,12 @@ ____
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/third-task-5.1/src/randomlicenseplates
 3) Время выполнения "план-факт": план - 1 час и 30 минут; факт - 1 час.
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Athird-task-5.1%2Fsrc%2Frandomlicenseplates%2FRandomLicensePlates.java
+
+### Четвертая задача из раздела 5.1 ###
+
+1) Задача 5.1.20: Случайные слова фиксированной длины. Напишите статический метод randomFixedLengthWords, который принимает в качестве аргументов целочисленные значения N и W и возвращает массив N строковых значений из W символов алфавита.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/fourth-task-5.1/src/randomfixedlength
+3) Время выполнения "план-факт": план - 30 минут; факт - 20 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afourth-task-5.1%2Fsrc%2Frandomfixedlength%2FRandomFixedLengthWords.java
+
+____

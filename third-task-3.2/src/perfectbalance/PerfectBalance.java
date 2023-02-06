@@ -53,6 +53,7 @@ public class PerfectBalance {
 
         Arrays.sort(a);
         logger.log(Level.INFO, () -> Arrays.toString(a));
+
         perfectBalance(tree, a, 0, a.length - 1);
     }
 
@@ -70,7 +71,10 @@ public class PerfectBalance {
         // Добавление в пустое ДБП середины списка слов, тем самым первый элемент в дереве будет корневым. А также вывод его в консоль.
 
         tree.addNode(mid, a[mid]);
-        logger.log(Level.INFO, "{0} ", a[mid]);
+
+        // N E B A C H F I R R P R T S Y
+        
+        logger.log(Level.INFO, "Идеальная балансировка: {0}", a[mid]);
 
         // Рекурсии, где сначала вычисляются середины левой стороны массива от середины изначального массива и строится левая часть дерева.
         // После завершения первой рекурсии, начинается вторая рекурсия, которая вычисляет середины правого массива от середины
@@ -82,19 +86,17 @@ public class PerfectBalance {
         /*
             По итогу дерево приобретает такой вид:
 
-                                               N
-                                              / \
-                                             /   \
-                                            E     R
-                                           / \     \
-                                          /   \     \
-                                         B     H     R
-                                        / \   / \   / \
-                                       A   C F   I P   R
-                                                        \
-                                                         T
-                                                        / \
-                                                       S   Y
+                                                  N
+                                                /   \
+                                               /     \
+                                              /       \
+                                             /         \
+                                            E           R
+                                           / \         / \
+                                          /   \       /   \
+                                         B     H     R     T
+                                        / \   / \   / \   / \
+                                       A   C F   I P   R S   Y
          */
     }
 
@@ -106,6 +108,7 @@ public class PerfectBalance {
 
         PerfectBalance tree = new PerfectBalance();
         String[] a = {"P", "E", "R", "F", "C", "T", "B", "I", "N", "A", "R", "Y", "S", "R", "H"};
+
         sortingWords(tree, a);
     }
 }

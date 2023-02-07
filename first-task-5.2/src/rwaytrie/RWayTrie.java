@@ -116,22 +116,20 @@ public class RWayTrie {
 
         // Ключи, добавленные в дерево согласно заданию.
 
-        trie.addNode("no", 0);
+        trie.addNode("now", 0);
         trie.addNode("is", 1);
-        trie.addNode("th", 2);
-        trie.addNode("ti", 3);
-        trie.addNode("fo", 4);
-        trie.addNode("al", 5);
-        trie.addNode("go", 6);
-        trie.addNode("pe", 7);
+        trie.addNode("the", 2);
+        trie.addNode("time", 3);
+        trie.addNode("for", 4);
+        trie.addNode("all", 5);
+        trie.addNode("good", 6);
+        trie.addNode("people", 7);
         trie.addNode("to", 8);
-        trie.addNode("co", 9);
+        trie.addNode("come", 9);
         trie.addNode("to", 10);
-        trie.addNode("th", 11);
-        trie.addNode("ai", 12);
+        trie.addNode("the", 11);
+        trie.addNode("aid", 12);
         trie.addNode("of", 13);
-        trie.addNode("th", 14);
-        trie.addNode("pa", 15);
 
         // Результат выполнения программы.
 

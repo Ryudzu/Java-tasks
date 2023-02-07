@@ -162,3 +162,10 @@ ____
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afourth-task-5.1%2Fsrc%2Frandomfixedlength%2FRandomFixedLengthWords.java
 
 ____
+
+### Первая задача из раздела 5.2 ###
+
+1) Задача 5.2.1: Нарисуйте R-частное trie-дерево, полученное после вставки ключей no is th ti fo al go pe to co to th ai of th pa в указанном порядке в первоначальное пустое trie-дерево (нулевые ссылки не изображайте).
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/first-task-5.2/src/rwaytrie
+3) Время выполнения "план-факт": план - 2 часа; факт - 5 часов.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afirst-task-5.2%2Fsrc%2Frwaytrie%2FRWayTrie.java

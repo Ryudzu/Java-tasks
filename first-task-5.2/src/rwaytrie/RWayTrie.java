@@ -13,7 +13,7 @@ public class RWayTrie {
     // Сам isWord будет присваиваться последнему символу ключа и устанавливаться на true.
 
     private static final int R = 256;
-    private TrieNode root;
+    private static TrieNode root;
 
     public RWayTrie() {
         root = new TrieNode();
@@ -56,43 +56,53 @@ public class RWayTrie {
     // Построение R-частного trie-дерева с помощью метода drawTree.
     // Идея взята отсюда: https://stackoverflow.com/questions/4965335/how-to-print-binary-tree-diagram-in-java#answer-8948691
 
-    public void drawTree() {
-        drawTree("", root, 0, true, true);
-    }
-
-    private void drawTree(String prefix, TrieNode currentNode, int index, boolean isTail, boolean isRoot) {
-        if(!isRoot) {
-            if (isTail)
-                System.out.println(prefix + "└── " + (char) index + "");
-            else
-                System.out.println(prefix + "├── " + (char) index + "");
-        }
+    public void drawTree(String prefix, TrieNode currentNode, int index, boolean isTail, boolean isRoot) {
+        if (!isRoot)
+            buildingPatternForVertexAndChildren(prefix, index, isTail);
 
         TrieNode lastChild = null;
-        int lastChildId = 0;
+        int lastChildIndex = 0;
         boolean isLastChild = true;
+
         for (int i = R - 1; i >= 0; i--) {
-            if(currentNode.children[i] != null) {
+            if (currentNode.children[i] != null) {
                 if (isLastChild) {
                     isLastChild = false;
                     lastChild = currentNode.children[i];
-                    lastChildId = i;
+                    lastChildIndex = i;
                     continue;
                 }
-
-                if (isTail)
-                    drawTree(prefix + (isRoot ? "" : "    "), currentNode.children[i], i, false, false);
-                else
-                    drawTree(prefix + (isRoot ? "" : "│   "), lastChild, lastChildId, false, false);
+                buildingTreeCycle(prefix, currentNode, i, isTail, isRoot);
             }
         }
 
-        if (lastChild != null) {
-            if (isTail)
-                drawTree(prefix + (isRoot ? "" : "    "), lastChild, lastChildId, true, false);
-            else
-                drawTree(prefix + (isRoot ? "" : "│   "), lastChild, lastChildId, true, false);
-        }
+        if (lastChild != null)
+            buildingChild(prefix, lastChild, lastChildIndex, isRoot, isTail);
+    }
+
+    // Отдельные методы для упрощения сложности основного метода, в котором они прописаны.
+
+    private static String result = "";
+
+    public void buildingPatternForVertexAndChildren(String prefix, int index, boolean isTail) {
+        if (isTail)
+            result = result.concat(prefix + "└── " + (char) index + "" + "\n");
+        else
+            result = result.concat(prefix + "├── " + (char) index + "\n");
+    }
+
+    public void buildingTreeCycle(String prefix, TrieNode currentNode, int index, boolean isTail, boolean isRoot) {
+        if (isTail)
+            drawTree(prefix + (isRoot ? "" : "    "), currentNode.children[index], index, false, false);
+        else
+            drawTree(prefix + (isRoot ? "" : "│   "), currentNode.children[index], index, false, false);
+    }
+
+    public void buildingChild(String prefix, TrieNode lastChild, int lastChildIndex, boolean isRoot, boolean isTail) {
+        if (isTail)
+            drawTree(prefix + (isRoot ? "" : "    "), lastChild, lastChildIndex, true, false);
+        else
+            drawTree(prefix + (isRoot ? "" : "│   "), lastChild, lastChildIndex, true, false);
     }
 
     public static void main(String[] args) {
@@ -116,7 +126,7 @@ public class RWayTrie {
 
         // Результат выполнения программы.
 
-        logger.log(Level.INFO, "Нарисованное R-частное trie-дерево по заданным ключам: ");
-        trie.drawTree();
+        trie.drawTree("", root, 0, true, true);
+        logger.log(Level.INFO, "Нарисованное R-частное trie-дерево по заданным ключам:\n{0}", result);
     }
 }

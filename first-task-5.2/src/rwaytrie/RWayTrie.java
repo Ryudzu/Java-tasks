@@ -13,7 +13,7 @@ public class RWayTrie {
     // Сам isWord будет присваиваться последнему символу ключа и устанавливаться на true.
 
     private static final int R = 256;
-    private static TrieNode root;
+    private TrieNode root;
 
     public RWayTrie() {
         root = new TrieNode();
@@ -82,7 +82,7 @@ public class RWayTrie {
 
     // Отдельные методы для упрощения сложности основного метода, в котором они прописаны.
 
-    private static String result = "";
+    private String result = "";
 
     public void buildingPatternForVertexAndChildren(String prefix, int index, boolean isTail) {
         if (isTail)
@@ -126,7 +126,7 @@ public class RWayTrie {
 
         // Результат выполнения программы.
 
-        trie.drawTree("", root, 0, true, true);
-        logger.log(Level.INFO, "Нарисованное R-частное trie-дерево по заданным ключам:\n{0}", result);
+        trie.drawTree("", trie.root, 0, true, true);
+        logger.log(Level.INFO, "Нарисованное R-частное trie-дерево по заданным ключам:\n{0}", trie.result);
     }
 }

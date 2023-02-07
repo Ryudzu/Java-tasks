@@ -22,8 +22,8 @@ public class RWayTrie {
     class TrieNode {
 
         private TrieNode[] children;
-        private boolean isWord;
-        private int value;
+        boolean isWord;
+        int value;
 
         public TrieNode() {
             this.children = new TrieNode[R];
@@ -61,25 +61,38 @@ public class RWayTrie {
     }
 
     private void drawTree(String prefix, TrieNode currentNode, int index, boolean isTail, boolean isRoot) {
-        if(!isRoot)
-            System.out.println(prefix + (isTail ? "└── " : "├── ") + (char) index + "");
+        if(!isRoot) {
+            if (isTail)
+                System.out.println(prefix + "└── " + (char) index + "");
+            else
+                System.out.println(prefix + "├── " + (char) index + "");
+        }
 
         TrieNode lastChild = null;
         int lastChildId = 0;
         boolean isLastChild = true;
         for (int i = R - 1; i >= 0; i--) {
             if(currentNode.children[i] != null) {
-                if(isLastChild) {
+                if (isLastChild) {
                     isLastChild = false;
                     lastChild = currentNode.children[i];
                     lastChildId = i;
                     continue;
                 }
-                drawTree(prefix + (isRoot ? "" : (isTail ? "    " : "│   ")), currentNode.children[i], i, false, false);
+
+                if (isTail)
+                    drawTree(prefix + (isRoot ? "" : "    "), currentNode.children[i], i, false, false);
+                else
+                    drawTree(prefix + (isRoot ? "" : "│   "), lastChild, lastChildId, false, false);
             }
         }
-        if (lastChild != null)
-            drawTree(prefix + (isRoot ? "" : (isTail ? "    " : "│   ")), lastChild, lastChildId, true, false);
+
+        if (lastChild != null) {
+            if (isTail)
+                drawTree(prefix + (isRoot ? "" : "    "), lastChild, lastChildId, true, false);
+            else
+                drawTree(prefix + (isRoot ? "" : "│   "), lastChild, lastChildId, true, false);
+        }
     }
 
     public static void main(String[] args) {

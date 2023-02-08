@@ -7,7 +7,7 @@ public class RWayTrie {
 
     private static final Logger logger = Logger.getLogger(RWayTrie.class.getName());
 
-    // Создание класса TrieNode, с помощью которого можно будет создать trie-дерево, в качестве размера массива children был взят
+    // Создание класса TrieNode, с помощью которого можно будет создать R-частное trie-дерево, в качестве размера массива children был взят
     // расширенный размер таблицы ASCII. Корень root должен быть пустым и указывать на узлы-вершины. Поле isWord будет запоминать
     // все добавленные ключи в дерево, тем самым при том же поиске можно будет проверить есть ли тот или иной ключ в самом дереве.
     // Сам isWord будет присваиваться последнему символу ключа и устанавливаться на true.
@@ -86,23 +86,23 @@ public class RWayTrie {
 
     private String result = "";
 
-    public void buildingPatternForVertexAndChildren(String prefix, int index, boolean isTail, boolean isRoot) {
+    private void buildingPatternForVertexAndChildren(String prefix, int index, boolean isTail, boolean isRoot) {
         if (!isRoot) {
             if (isTail)
-                result = result.concat(prefix + "└── " + (char) index + "" + "\n");
+                result = result.concat(prefix + "└── " + (char) index + "\n");
             else
                 result = result.concat(prefix + "├── " + (char) index + "\n");
         }
     }
 
-    public void buildingTreeCycle(String prefix, TrieNode currentNode, int index, boolean isTail, boolean isRoot) {
+    private void buildingTreeCycle(String prefix, TrieNode currentNode, int index, boolean isTail, boolean isRoot) {
         if (isTail)
             drawTree(prefix + (isRoot ? "" : "    "), currentNode.children[index], index, false, false);
         else
             drawTree(prefix + (isRoot ? "" : "│   "), currentNode.children[index], index, false, false);
     }
 
-    public void buildingChild(String prefix, TrieNode lastChild, int lastChildIndex, boolean isRoot, boolean isTail) {
+    private void buildingChild(String prefix, TrieNode lastChild, int lastChildIndex, boolean isRoot, boolean isTail) {
         if (lastChild != null) {
             if (isTail)
                 drawTree(prefix + (isRoot ? "" : "    "), lastChild, lastChildIndex, true, false);

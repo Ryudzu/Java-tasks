@@ -165,7 +165,14 @@ ____
 
 ### Первая задача из раздела 5.2 ###
 
-1) Задача 5.2.3: Нарисуйте R-частное trie-дерево, полученное после вставки ключей now is the time for all good people to come to the aid of в указанном порядке в первоначальное пустое trie-дерево (нулевые ссылки не изображайте).
+1) Задача 5.2.3: Нарисуйте R-частное trie-дерево, полученное после вставки ключей now is the time for all good people to come to the aid of в указанном порядке в первоначально пустое trie-дерево (нулевые ссылки не изображайте).
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/first-task-5.2/src/rwaytrie
 3) Время выполнения "план-факт": план - 2 часа; факт - 5 часов.
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afirst-task-5.2%2Fsrc%2Frwaytrie%2FRWayTrie.java
+
+### Вторая задача из раздела 5.2 ###
+
+1) Задача 5.2.4: Нарисуйте ТТП, полученное после вставки ключей now is the time for all good people to come to the aid of в указанном порядке в первоначально пустое ТТП (нулевые ссылки не изображайте).
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/second-task-5.2/src/ternarysearchtree
+3) Время выполнения "план-факт": план - 3 часа; факт - 4 часа.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-5.2%2Fsrc%2Fternarysearchtree%2FTernarySearchTree.java

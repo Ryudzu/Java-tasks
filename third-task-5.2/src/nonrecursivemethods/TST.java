@@ -12,7 +12,7 @@ public class TST {
     class TrieNode {
 
         private char keyChar;
-        private boolean isWord;
+        boolean isWord;
         int value;
 
         private TrieNode left;

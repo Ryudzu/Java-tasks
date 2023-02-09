@@ -12,7 +12,7 @@ public class TST {
     class TrieNode {
 
         private char keyChar;
-        boolean isWord;
+        private boolean isWord;
         int value;
 
         private TrieNode left;
@@ -29,36 +29,58 @@ public class TST {
 
     public void addNode(String word, int value) {
         char[] keyChar = word.toCharArray();
+        int i = 0;
 
         if (root == null)
             root = new TrieNode(keyChar[0]);
 
         TrieNode currentNode = root;
-        for (int i = 0; i < keyChar.length; i++) {
-            if (keyChar[i] < currentNode.keyChar) {
-                if (currentNode.left == null)
-                    currentNode.left = new TrieNode(keyChar[i]);
-
+        while (i < keyChar.length) {
+            if (isLeftNode(currentNode, keyChar, i)) {
                 currentNode = currentNode.left;
                 i--;
-            } else if (keyChar[i] > currentNode.keyChar) {
-                if (currentNode.right == null)
-                    currentNode.right = new TrieNode(keyChar[i]);
-
+            } else if (isRightNode(currentNode, keyChar, i)) {
                 currentNode = currentNode.right;
                 i--;
             } else {
-                if (i < word.length() - 1) {
-                    if (currentNode.middle == null)
-                        currentNode.middle = new TrieNode(keyChar[i+1]);
-
+                if (isMiddleNode(currentNode, keyChar, i))
                     currentNode = currentNode.middle;
-                } else {
+                else {
                     currentNode.isWord = true;
                     currentNode.value = value;
                 }
             }
+            i++;
         }
+    }
+
+    // Отдельные методы для упрощения основного метода addNode.
+
+    public boolean isLeftNode(TrieNode currentNode, char[] keyChar, int i) {
+        if (keyChar[i] < currentNode.keyChar) {
+            if (currentNode.left == null)
+                currentNode.left = new TrieNode(keyChar[i]);
+            return true;
+        } else
+            return false;
+    }
+
+    public boolean isRightNode(TrieNode currentNode, char[] keyChar, int i) {
+        if (keyChar[i] > currentNode.keyChar) {
+            if (currentNode.right == null)
+                currentNode.right = new TrieNode(keyChar[i]);
+            return true;
+        } else
+            return false;
+    }
+
+    public boolean isMiddleNode(TrieNode currentNode, char[] keyChar, int i) {
+        if (i < keyChar.length - 1) {
+            if (currentNode.middle == null)
+                currentNode.middle = new TrieNode(keyChar[i+1]);
+            return true;
+        } else
+            return false;
     }
 
     public static void main(String[] args) {

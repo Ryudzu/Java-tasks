@@ -176,3 +176,10 @@ ____
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/second-task-5.2/src/ternarysearchtree
 3) Время выполнения "план-факт": план - 3 часа; факт - 4 часа.
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-5.2%2Fsrc%2Fternarysearchtree%2FTernarySearchTree.java
+
+### Третья задача из раздела 5.2 ###
+
+1) Задача 5.2.5: Напишите нерекурсивные версии реализаций TrieST и TST.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/third-task-5.2/src/nonrecursivemethods
+3) Время выполнения "план-факт": план - 2 часа; факт - 1 час и 30 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Athird-task-5.2%2Fsrc%2Fnonrecursivemethods

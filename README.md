@@ -183,3 +183,19 @@ ____
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/third-task-5.2/src/nonrecursivemethods
 3) Время выполнения "план-факт": план - 2 часа; факт - 1 час и 30 минут.
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Athird-task-5.2%2Fsrc%2Fnonrecursivemethods
+
+### Четвертая задача из раздела 5.2 ###
+
+1) Задача 5.2.14: Уникальные подстроки длиной L. Напишите клиент TST, который вводит текст из стандартного ввода и подсчитывает в нем количество уникальных подстрок длиной L. Например, входной текст cgcgggcgcg содержит пять уникальных подстрок длиной 3 - cgc, cgg, gcg, ggc и ggg.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/fourth-task-5.2/src/uniquesubstring
+3) Время выполнения "план-факт": план - 1 час; факт - 40 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afourth-task-5.2%2Fsrc%2Funiquesubstring%2FUniqueSubStrings.java
+
+____
+
+### Первая задача из раздела 5.3 ###
+
+1) Задача 5.3.8: Добавьте в класс KMP метод count(), который подсчитывает вхождения подстроки, и метод searchAll(), который выводит все вхождения.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/first-task-5.3/src/kmp
+3) Время выполнения "план-факт": план - 2 часа; факт - 1 час и 30 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afirst-task-5.3%2Fsrc%2Fkmp%2FKMP.java

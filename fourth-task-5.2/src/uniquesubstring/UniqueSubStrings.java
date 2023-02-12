@@ -20,7 +20,7 @@ public class UniqueSubStrings {
         // Результат выполнения программы.
 
         String[] subWordsArr = uniqueSubstrings(word, size);
-        logger.log(Level.INFO, Arrays.toString(subWordsArr));
+        logger.log(Level.INFO, "{0}", Arrays.toString(subWordsArr));
     }
 
     // Метод uniqueSubstrings, который принимает в себя строку и длину подстрок. В этом методе цикл проходит практически каждую

@@ -199,3 +199,10 @@ ____
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/first-task-5.3/src/kmp
 3) Время выполнения "план-факт": план - 2 часа; факт - 1 час и 30 минут.
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afirst-task-5.3%2Fsrc%2Fkmp%2FKMP.java
+
+### Вторая задача из раздела 5.3 ###
+
+1) Задача 5.3.9: Добавьте в класс BoyerMoore метод count(), который подсчитывает вхождения подстроки, и метод searchAll(), который выводит все вхождения.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/second-task-5.3/src/boyermoore
+3) Время выполнения "план-факт": план - 3 часа; факт - 3 часа и 10 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-5.3%2Fsrc%2Fboyermoore%2FBoyerMoore.java

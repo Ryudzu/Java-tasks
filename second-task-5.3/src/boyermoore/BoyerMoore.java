@@ -40,8 +40,8 @@ public class BoyerMoore {
     // В случае совпадения символов будет осуществляться проход по основной строке и подстроке до того момента, пока либо j
     // не будет меньше нуля или если символы перестанут совпадать.
 
-    public static HashMap<Character, Integer> prefixMapValues(String subWord) {
-        HashMap<Character, Integer> values = new HashMap<>();
+    public static Map<Character, Integer> prefixMapValues(String subWord) {
+        Map<Character, Integer> values = new HashMap<>();
 
         for (int i = 0; i < 256; i++)
             values.put((char) i, subWord.length());
@@ -55,7 +55,7 @@ public class BoyerMoore {
     // Метод searchAll показывает все вхождения подстроки.
 
     public static Integer[] searchAll(String word, String subWord) {
-        HashMap<Character, Integer> values = prefixMapValues(subWord);
+        Map<Character, Integer> values = prefixMapValues(subWord);
         List<Integer> entries = new ArrayList<>();
 
         int i = subWord.length() - 1;
@@ -82,7 +82,7 @@ public class BoyerMoore {
     // Метод count показывает количество вхождений подстроки.
 
     public static int count(String word, String subWord) {
-        HashMap<Character, Integer> values = prefixMapValues(subWord);
+        Map<Character, Integer> values = prefixMapValues(subWord);
         int counter = 0;
 
         int i = subWord.length() - 1;

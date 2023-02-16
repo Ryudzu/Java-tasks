@@ -222,3 +222,10 @@ ____
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afourth-task-5.3%2Fsrc%2Fcyclepermutation%2FCyclePermutation.java
 
 ____
+
+### Первая задача из раздела 5.4 ###
+
+1) Задача 5.4.8: Напишите регулярные выражения для каждого из следующих множеств двоичных строк: a) содержит не менее трех последовательных единиц; б) содержит подстроку 110; в) содержит подстроку 1101100; г) не содержит подстроку 110.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/first-task-5.4/src/binarystring
+3) Время выполнения "план-факт": план - 30 минут; факт - 20 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afirst-task-5.4%2Fsrc%2Fbinarystring%2FBinaryString.java

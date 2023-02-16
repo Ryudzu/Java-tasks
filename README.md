@@ -206,3 +206,19 @@ ____
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/second-task-5.3/src/boyermoore
 3) Время выполнения "план-факт": план - 3 часа; факт - 3 часа и 10 минут.
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-5.3%2Fsrc%2Fboyermoore%2FBoyerMoore.java
+
+### Третья задача из раздела 5.3 ###
+
+1) Задача 5.3.10: Добавьте в класс RabinKarp метод count(), который подсчитывает вхождения подстроки, и метод searchAll(), который выводит все вхождения.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/third-task-5.3/src/rabinkarp
+3) Время выполнения "план-факт": план - 3 часа; факт - 4 часа.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Athird-task-5.3%2Fsrc%2Frabinkarp%2FRabinKarp.java
+
+### Четвертая задача из раздела 5.3 ###
+
+1) Задача 5.3.26: Проверка наличия циклических перестановок. Напишите программу, которая для заданных двух строк определяет, является ли одна из них циклической перестановкой другой - например, пальто и топаль.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/fourth-task-5.3/src/cyclepermutation
+3) Время выполнения "план-факт": план - 1 час; факт - 30 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afourth-task-5.3%2Fsrc%2Fcyclepermutation%2FCyclePermutation.java
+
+____

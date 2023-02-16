@@ -42,7 +42,7 @@ public class RabinKarp {
     public static Integer[] searchAll(String word, String subWord) {
         List<Integer> entries = new ArrayList<>();
 
-        int R = 256;
+        int ascii = 256;
         int firstSymbolHash = 1;
         int mod = word.length();
 
@@ -50,15 +50,15 @@ public class RabinKarp {
         int wordHash = word.charAt(0) % mod;
 
         for (int i = 1; i < subWord.length(); i++) {
-            subWordHash *= R;
+            subWordHash *= ascii;
             subWordHash += subWord.charAt(i);
             subWordHash %= mod;
 
-            wordHash *= R;
+            wordHash *= ascii;
             wordHash += word.charAt(i);
             wordHash %= mod;
 
-            firstSymbolHash *= R;
+            firstSymbolHash *= ascii;
             firstSymbolHash %= mod;
         }
 
@@ -71,7 +71,7 @@ public class RabinKarp {
 
             wordHash -= (word.charAt(i) * firstSymbolHash) % mod;
             wordHash += mod;
-            wordHash *= R;
+            wordHash *= ascii;
             wordHash += word.charAt(subWord.length() + i);
             wordHash %= mod;
         }
@@ -82,7 +82,7 @@ public class RabinKarp {
     public static int count(String word, String subWord) {
         int counter = 0;
 
-        int R = 256;
+        int ascii = 256;
         int firstSymbolHash = 1;
         int mod = word.length();
 
@@ -90,15 +90,15 @@ public class RabinKarp {
         int wordHash = word.charAt(0) % mod;
 
         for (int i = 1; i < subWord.length(); i++) {
-            subWordHash *= R;
+            subWordHash *= ascii;
             subWordHash += subWord.charAt(i);
             subWordHash %= mod;
 
-            wordHash *= R;
+            wordHash *= ascii;
             wordHash += word.charAt(i);
             wordHash %= mod;
 
-            firstSymbolHash *= R;
+            firstSymbolHash *= ascii;
             firstSymbolHash %= mod;
         }
 
@@ -111,7 +111,7 @@ public class RabinKarp {
 
             wordHash -= (word.charAt(i) * firstSymbolHash) % mod;
             wordHash += mod;
-            wordHash *= R;
+            wordHash *= ascii;
             wordHash += word.charAt(subWord.length() + i);
             wordHash %= mod;
         }

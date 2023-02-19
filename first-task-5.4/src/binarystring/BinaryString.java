@@ -22,7 +22,7 @@ public class BinaryString {
         Matcher mt1 = pt1.matcher(binaryString);
         while (mt1.find()) {
             String result = String.format("a) Найдено на позиции с %d по %d: %s", mt1.start(), mt1.end(), binaryString.substring(mt1.start(), mt1.end()));
-            logger.log(Level.INFO, "{0}\n", result);
+            allPos(result);
         }
 
         // Результат выполнения второго случая для поиска подстрок, с наличием подстроки 110.
@@ -32,7 +32,7 @@ public class BinaryString {
 
         while (mt2.find()) {
             String result = String.format("б) Найдено на позиции с %d по %d: %s", mt2.start(), mt2.end(), binaryString.substring(mt2.start(), mt2.end()));
-            logger.log(Level.INFO, "{0}\n", result);
+            allPos(result);
         }
 
         // Результат выполнения третьего случая для поиска подстрок, с наличием подстроки 1101100.
@@ -42,17 +42,21 @@ public class BinaryString {
 
         while (mt3.find()) {
             String result = String.format("в) Найдено на позиции с %d по %d: %s", mt3.start(), mt3.end(), binaryString.substring(mt3.start(), mt3.end()));
-            logger.log(Level.INFO, "{0}\n", result);
+            allPos(result);
         }
 
         // Результат выполнения четвертого случая для поиска подстрок, в которые не должна входить подстрока 110.
 
-        Pattern pt4 = Pattern.compile("((((10)+1*)|((01)+1*)|((0)+1*))|11?)");
+        Pattern pt4 = Pattern.compile("((((0)|(10))+1*)|11?)");
         Matcher mt4 = pt4.matcher(binaryString);
 
         while (mt4.find()) {
             String result = String.format("г) Найдено на позиции с %d по %d: %s", mt4.start(), mt4.end(), binaryString.substring(mt4.start(), mt4.end()));
-            logger.log(Level.INFO, "{0}\n", result);
+            allPos(result);
         }
+    }
+
+    public static void allPos(String result) {
+        logger.log(Level.INFO, "{0}\n", result);
     }
 }

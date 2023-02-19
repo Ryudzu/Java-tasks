@@ -229,3 +229,10 @@ ____
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/first-task-5.4/src/binarystring
 3) Время выполнения "план-факт": план - 2 часа; факт - 2 часа и 10 минут.
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afirst-task-5.4%2Fsrc%2Fbinarystring%2FBinaryString.java
+
+### Вторая задача из раздела 5.4 ###
+
+1) Задача 5.4.9: Напишите регулярное выражение для двоичных строк, которые содержат не менее двух нулей, но не содержат последовательных нулей.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/second-task-5.4/src/binarystringzerocheck
+3) Время выполнения "план-факт": план - 1 час и 30 минут; факт - 1 час и 20 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-5.4%2Fsrc%2Fbinarystringzerocheck%2FBinaryStringZeroCheck.java

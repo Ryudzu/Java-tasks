@@ -18,7 +18,7 @@ public class BinaryStringZeroCheck {
 
         // Результат выполнения программы, которая выводит строки с двумя и более непоследовательными нулями.
 
-        Pattern pt = Pattern.compile("(1*01+0(1+0?)*)");
+        Pattern pt = Pattern.compile("(1*01+0(1+0?)*+)");
         Matcher mt = pt.matcher(binaryString);
 
         while (mt.find()) {

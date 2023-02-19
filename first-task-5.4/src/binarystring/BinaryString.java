@@ -18,7 +18,7 @@ public class BinaryString {
 
         // Результат выполнения первого случая для поиска подстрок, с 3 и более повторяющимися подряд единицами.
 
-        Pattern pt1 = Pattern.compile("((0+1{3,})|(10+1{3,}))");
+        Pattern pt1 = Pattern.compile("((0|10|110)*+1{3,})");
         Matcher mt1 = pt1.matcher(binaryString);
         while (mt1.find()) {
             String result = String.format("a) Найдено на позиции с %d по %d: %s", mt1.start(), mt1.end(), binaryString.substring(mt1.start(), mt1.end()));
@@ -27,7 +27,7 @@ public class BinaryString {
 
         // Результат выполнения второго случая для поиска подстрок, с наличием подстроки 110.
 
-        Pattern pt2 = Pattern.compile("((0*1{2,}0)|(10*1{2,}0))");
+        Pattern pt2 = Pattern.compile("((0|10)*+1{2,}0)");
         Matcher mt2 = pt2.matcher(binaryString);
 
         while (mt2.find()) {
@@ -37,7 +37,7 @@ public class BinaryString {
 
         // Результат выполнения третьего случая для поиска подстрок, с наличием подстроки 1101100.
 
-        Pattern pt3 = Pattern.compile("((0*1{2,}01{2}0{2})|(10*1{2,}01{2}0{2}))");
+        Pattern pt3 = Pattern.compile("((0|10)*+1{2,}01{2}0{2,})");
         Matcher mt3 = pt3.matcher(binaryString);
 
         while (mt3.find()) {

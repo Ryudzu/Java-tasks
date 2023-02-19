@@ -1,4 +1,4 @@
-package binarystring;
+package binarystringzerocheck;
 
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -6,9 +6,9 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class BinaryString {
+public class BinaryStringZeroCheck {
 
-    private static final Logger logger = Logger.getLogger(BinaryString.class.getName());
+    private static final Logger logger = Logger.getLogger(BinaryStringZeroCheck.class.getName());
 
     public static void main(String[] args) {
 

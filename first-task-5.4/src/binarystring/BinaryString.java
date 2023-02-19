@@ -47,7 +47,7 @@ public class BinaryString {
 
         // Результат выполнения четвертого случая для поиска подстрок, в которые не должна входить подстрока 110.
 
-        Pattern pt4 = Pattern.compile("((((0)|(10))+1*)|11?)");
+        Pattern pt4 = Pattern.compile("(((0|10)*+1*)|(1+))");
         Matcher mt4 = pt4.matcher(binaryString);
 
         while (mt4.find()) {

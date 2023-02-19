@@ -1,5 +1,6 @@
 package binarystring;
 
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -11,32 +12,49 @@ public class BinaryString {
 
     public static void main(String[] args) {
 
-        // Результат выполнения первого случая для проверки на наличие трех и более последовательных единиц.
+        Scanner input = new Scanner(System.in);
+        logger.log(Level.INFO, "Введите двоичную строку: ");
+        String binaryString = input.nextLine();
 
-        Pattern pt1 = Pattern.compile("([^0]{3,})");
-        String firstWord = "111";
-        Matcher mt1 = pt1.matcher(firstWord);
-        logger.log(Level.INFO, "a) {0}", mt1.matches());
+        // Результат выполнения первого случая для поиска подстрок, с 3 и более повторяющимися подряд единицами.
 
-        // Результат выполнения второго случая для проверки на наличие подстроки 110.
+        Pattern pt1 = Pattern.compile("((0|10)+1{3,})");
+        Matcher mt1 = pt1.matcher(binaryString);
+        while (mt1.find()) {
+            String result = String.format("a) Найдено на позиции с %d по %d: %s", mt1.start(), mt1.end(), binaryString.substring(mt1.start(), mt1.end()));
+            logger.log(Level.INFO, "{0}\n", result);
+        }
 
-        Pattern pt2 = Pattern.compile("(1{2}0)");
-        String secondWord = "110";
-        Matcher mt2 = pt2.matcher(secondWord);
-        logger.log(Level.INFO, "б) {0}", mt2.matches());
+        // Результат выполнения второго случая для поиска подстрок, с наличием подстроки 110.
 
-        // Результат выполнения третьего случая для проверки на наличие подстроки 1101100.
+        Pattern pt2 = Pattern.compile("((0|10)*1{2,}0)");
+        Matcher mt2 = pt2.matcher(binaryString);
 
-        Pattern pt3 = Pattern.compile("(1{2}01{2}0{2})");
-        String thirdWord = "1101100";
-        Matcher mt3 = pt3.matcher(thirdWord);
-        logger.log(Level.INFO, "в) {0}", mt3.matches());
+        while (mt2.find()) {
+            String result = String.format("б) Найдено на позиции с %d по %d: %s", mt2.start(), mt2.end(), binaryString.substring(mt2.start(), mt2.end()));
+            logger.log(Level.INFO, "{0}\n", result);
+        }
+        System.out.println();
 
-        // Результат выполнения четвертого случая для проверки всех двоичных подстрок, кроме 110.
+        // Результат выполнения третьего случая для поиска подстрок, с наличием подстроки 1101100.
 
-        Pattern pt4 = Pattern.compile("(0{3})|(0{2}1)|(010)|(01{2})|(10{2})|(101)|(1{3})");
-        String fourthWord = "110";
-        Matcher mt4 = pt4.matcher(fourthWord);
-        logger.log(Level.INFO, "г) {0}", mt4.matches());
+        Pattern pt3 = Pattern.compile("((0|10)*1{2,}01{2}0{2})");
+        Matcher mt3 = pt3.matcher(binaryString);
+
+        while (mt3.find()) {
+            String result = String.format("в) Найдено на позиции с %d по %d: %s", mt3.start(), mt3.end(), binaryString.substring(mt3.start(), mt3.end()));
+            logger.log(Level.INFO, "{0}\n", result);
+        }
+        System.out.println();
+
+        // Результат выполнения четвертого случая для поиска подстрок, в которые не должна входить подстрока 110.
+
+        Pattern pt4 = Pattern.compile("(((0|10)+1*)|11?)");
+        Matcher mt4 = pt4.matcher(binaryString);
+
+        while (mt4.find()) {
+            String result = String.format("г) Найдено на позиции с %d по %d: %s", mt4.start(), mt4.end(), binaryString.substring(mt4.start(), mt4.end()));
+            logger.log(Level.INFO, "{0}\n", result);
+        }
     }
 }

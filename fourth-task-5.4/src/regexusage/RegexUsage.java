@@ -20,7 +20,7 @@ public class RegexUsage {
 
         Pattern phone = Pattern.compile("^((\\(\\d{3}\\)) (\\d{3})-(\\d{4}))$");
         Matcher phoneCheck = phone.matcher(phoneNumber);
-        logger.log(Level.INFO, "{0}\n", phoneCheck.matches());
+        allPos(phoneCheck.matches());
 
         logger.log(Level.INFO, "Введите номер карточки социального страхования: ");
         String cardNumber = input.nextLine();
@@ -29,7 +29,7 @@ public class RegexUsage {
 
         Pattern card = Pattern.compile("^((\\d{3})-(\\d{2})-(\\d{4}))$");
         Matcher cardCheck = card.matcher(cardNumber);
-        logger.log(Level.INFO, "{0}\n", cardCheck.matches());
+        allPos(cardCheck.matches());
 
         logger.log(Level.INFO, "Введите дату: ");
         String dateNumber = input.nextLine();
@@ -38,7 +38,7 @@ public class RegexUsage {
 
         Pattern date = Pattern.compile("^(([JFMASNOD][a-z]+) (\\d{1,2}), (\\d{4}))$");
         Matcher dateCheck = date.matcher(dateNumber);
-        logger.log(Level.INFO, "{0}\n", dateCheck.matches());
+        allPos(dateCheck.matches());
 
         logger.log(Level.INFO, "Введите IPv4 адрес: ");
         String ipAddress = input.nextLine();
@@ -47,7 +47,7 @@ public class RegexUsage {
 
         Pattern ip = Pattern.compile("^(((\\d|[1-9]\\d|1\\d\\d|2[0-4]\\d|25[0-5])\\.){3}(\\d|[1-9]\\d|1\\d\\d|2[0-4]\\d|25[0-5]))$");
         Matcher ipCheck = ip.matcher(ipAddress);
-        logger.log(Level.INFO, "{0}\n", ipCheck.matches());
+        allPos(ipCheck.matches());
 
         logger.log(Level.INFO, "Введите автомобильный номер: ");
         String autoNumber = input.nextLine();
@@ -56,6 +56,10 @@ public class RegexUsage {
 
         Pattern auto = Pattern.compile("\\d{4}[A-Z]{2}");
         Matcher autoCheck = auto.matcher(autoNumber);
-        logger.log(Level.INFO, "{0}", autoCheck.matches());
+        allPos(autoCheck.matches());
+    }
+
+    public static void allPos(boolean result) {
+        logger.log(Level.INFO, "{0}\n", result);
     }
 }

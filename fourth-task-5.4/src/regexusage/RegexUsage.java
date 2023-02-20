@@ -16,26 +16,34 @@ public class RegexUsage {
         logger.log(Level.INFO, "Введите номер телефона: ");
         String phoneNumber = input.nextLine();
 
-        Pattern phone = Pattern.compile("^((\\([0-9]{3}\\)) ([0-9]{3})-([0-9]{4}))$");
+        // Результат выполнения первого случая для проверки номеров телефона.
+
+        Pattern phone = Pattern.compile("^((\\(\\d{3}\\)) (\\d{3})-(\\d{4}))$");
         Matcher phoneCheck = phone.matcher(phoneNumber);
         logger.log(Level.INFO, "{0}\n", phoneCheck.matches());
 
         logger.log(Level.INFO, "Введите номер карточки социального страхования: ");
         String cardNumber = input.nextLine();
 
-        Pattern card = Pattern.compile("^(([0-9]{3})-([0-9]{2})-([0-9]{4}))$");
+        // Результат выполнения второго случая для проверки карточек социального страхования.
+
+        Pattern card = Pattern.compile("^((\\d{3})-(\\d{2})-(\\d{4}))$");
         Matcher cardCheck = card.matcher(cardNumber);
         logger.log(Level.INFO, "{0}\n", cardCheck.matches());
 
         logger.log(Level.INFO, "Введите дату: ");
         String dateNumber = input.nextLine();
 
-        Pattern date = Pattern.compile("^(([JFMASNOD][a-z]+) ([0-9]{1,2}), ([0-9]{4}))$");
+        // Результат выполнения третьего случая для проверки даты.
+
+        Pattern date = Pattern.compile("^(([JFMASNOD][a-z]+) (\\d{1,2}), (\\d{4}))$");
         Matcher dateCheck = date.matcher(dateNumber);
         logger.log(Level.INFO, "{0}\n", dateCheck.matches());
 
         logger.log(Level.INFO, "Введите IPv4 адрес: ");
         String ipAddress = input.nextLine();
+
+        // Результат выполнения четвертого случая для проверки IPv4-адреса.
 
         Pattern ip = Pattern.compile("^(((\\d|[1-9]\\d|1\\d\\d|2[0-4]\\d|25[0-5])\\.){3}(\\d|[1-9]\\d|1\\d\\d|2[0-4]\\d|25[0-5]))$");
         Matcher ipCheck = ip.matcher(ipAddress);
@@ -43,6 +51,8 @@ public class RegexUsage {
 
         logger.log(Level.INFO, "Введите автомобильный номер: ");
         String autoNumber = input.nextLine();
+
+        // Результат выполнения пятого случая для проверки автомобильных номеров.
 
         Pattern auto = Pattern.compile("\\d{4}[A-Z]{2}");
         Matcher autoCheck = auto.matcher(autoNumber);

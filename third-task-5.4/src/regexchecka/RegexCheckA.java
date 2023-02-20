@@ -16,6 +16,8 @@ public class RegexCheckA {
         logger.log(Level.INFO, "Введите строку: ");
         String stringWord = input.nextLine();
 
+        // Результат выполнения первого случая для поиска подстрок, где точно содержится 4 последовательных А.
+
         Pattern pt1 = Pattern.compile("(([^A])*+A{4})");
         Matcher mt1 = pt1.matcher(stringWord);
 
@@ -24,6 +26,8 @@ public class RegexCheckA {
             logger.log(Level.INFO, "{0}\n", result);
         }
 
+        // Результат выполнения второго случая для поиска подстрок, где содержится не более 4-х последовательных А.
+
         Pattern pt2 = Pattern.compile("(([^A])*+A{2,4})");
         Matcher mt2 = pt2.matcher(stringWord);
 
@@ -31,6 +35,8 @@ public class RegexCheckA {
             String result = String.format("б) Найдено на позиции с %d по %d: %s", mt2.start(), mt2.end(), stringWord.substring(mt2.start(), mt2.end()));
             logger.log(Level.INFO, "{0}\n", result);
         }
+
+        // Результат выполнения третьего случая для поиска подстрок и выполняется подсчет вхождений (по крайней мере одно) 4-х последовательных А.
 
         Pattern pt3 = Pattern.compile("(([^A])*+A{4})");
         Matcher mt3 = pt3.matcher(stringWord);

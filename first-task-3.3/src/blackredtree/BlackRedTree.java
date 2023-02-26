@@ -8,6 +8,8 @@ public class BlackRedTree {
     private static final Logger logger = Logger.getLogger(BlackRedTree.class.getName());
 
     private Node root;
+    private final String colorBlack = "BLACK";
+    private final String colorRed = "RED";
 
     class Node {
         private final char data;
@@ -40,7 +42,7 @@ public class BlackRedTree {
         }
 
         Node newNode = new Node(key);
-        newNode.color = "RED";
+        newNode.color = colorRed;
         if (parent == null)
             root = newNode;
         else if (key < parent.data)
@@ -54,10 +56,10 @@ public class BlackRedTree {
     }
 
     // Смена цвета узлов и вращения происходят в следующих случаях:
-    // 1) если левый и правый потомок являются красными узлами, то происходит обмен цвета потомков с их родителем, поскольку корень не может
+    // - если левый и правый потомок являются красными узлами, то происходит обмен цвета потомков с их родителем, поскольку корень не может
     // быть красным и листья тоже;
-    // 2) если левый потомок является красным, а правый - черным, то происходит левое малое вращение;
-    // 3) если правый потомок является красным, а левый - черным, то происходит правое малое вращение.
+    // - если левый потомок является красным, а правый - черным, то происходит левое малое вращение;
+    // - если правый потомок является красным, а левый - черным, то происходит правое малое вращение.
 
     public void colorSwap(Node currentNode) {
         Node parent = currentNode.parent;
@@ -65,20 +67,20 @@ public class BlackRedTree {
         if (parent == null)
             return;
 
-        if (parent.color.equals("BLACK"))
+        if (parent.color.equals(colorBlack))
             return;
 
         Node grandparent = parent.parent;
         if (grandparent == null) {
-            parent.color = "BLACK";
+            parent.color = colorBlack;
             return;
         }
 
         Node uncle = getUncle(parent);
-        if (uncle != null && uncle.color.equals("RED")) {
-            parent.color = "BLACK";
-            grandparent.color = "RED";
-            uncle.color = "BLACK";
+        if (uncle != null && uncle.color.equals(colorRed)) {
+            parent.color = colorBlack;
+            grandparent.color = colorRed;
+            uncle.color = colorBlack;
 
             colorSwap(grandparent);
         } else if (parent == grandparent.left) {
@@ -88,8 +90,8 @@ public class BlackRedTree {
             }
             rotateRight(grandparent);
 
-            parent.color = "BLACK";
-            grandparent.color = "RED";
+            parent.color = colorBlack;
+            grandparent.color = colorRed;
         } else {
             if (currentNode == parent.left) {
                 rotateRight(parent);
@@ -97,8 +99,8 @@ public class BlackRedTree {
             }
             rotateLeft(grandparent);
 
-            parent.color = "BLACK";
-            grandparent.color = "RED";
+            parent.color = colorBlack;
+            grandparent.color = colorRed;
         }
     }
 
@@ -166,7 +168,7 @@ public class BlackRedTree {
         printTree(this.root, "", true);
     }
 
-    private static String result = "\n";
+    private String result = "\n";
     private void printTree(Node currentNode, String indent, boolean last) {
         if (currentNode != null) {
             result = result.concat(indent);
@@ -178,7 +180,7 @@ public class BlackRedTree {
                 indent += "|  ";
             }
 
-            String sColor = currentNode.color.equals("RED") ? "RED" : "BLACK";
+            String sColor = currentNode.color.equals("RED") ? "RED" : colorBlack;
             result = result.concat(currentNode.data + " (" + sColor + ")\n");
             printTree(currentNode.left, indent, false);
             printTree(currentNode.right, indent, true);
@@ -204,6 +206,6 @@ public class BlackRedTree {
         // Результат выполнения программы.
 
         tree.printTree();
-        logger.log(Level.INFO, "{0}", result);
+        logger.log(Level.INFO, "{0}", tree.result);
     }
 }

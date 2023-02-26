@@ -99,7 +99,33 @@ ____
 
 ____
 
-### Задачи из раздела 3.3 временно отсутствуют! ###
+### Первая задача из раздела 3.3 ###
+
+1) Задача 3.3.10: Нарисуйте красно-черное ДБП, которое получится после вставки ключей E A S Y Q U T I O N в указанном порядке в первоначально пустое дерево.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/first-task-3.3/src/redblacktree
+3) Время выполнения "план-факт": план - 4 часа; факт - 10 часов.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afirst-task-3.3%2Fsrc%2Fredblacktree%2FRedBlackTree.java
+
+### Вторая задача из раздела 3.3 ###
+
+1) Задача 3.3.11: Нарисуйте красно-черное ДБП, которое получится после вставки ключей Y L P M X H C R A E S в указанном порядке в первоначально пустое дерево.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/second-task-3.3/src/redblacktreenewkeys
+3) Время выполнения "план-факт": план - 4 часа; факт - 10 часов.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-3.3%2Fsrc%2Fredblacktreenewkeys%2FRedBlackTreeNewKeys.java
+
+### Третья задача из раздела 3.3 ###
+
+1) Задача 3.3.14: Нарисуйте красно-черное ДБП, которое получится при вставке букв от A до K по порядку в первоначально пустое дерево.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/third-task-3.3/src/redblacktreefromatok
+3) Время выполнения "план-факт": план - 4 часа; факт - 10 часов.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Athird-task-3.3%2Fsrc%2Fredblacktreefromatok%2FRedBlackTreeFromAtoK.java
+
+### Четвертая задача из раздела 3.3 ###
+
+1) Задача 3.3.31: Добавьте в класс RedBlackBST метод draw(), который вычерчивает красно-черные ДБП.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/fourth-task-3.3/src/redblackbst
+3) Время выполнения "план-факт": план - 4 часа; факт - 10 часов.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afourth-task-3.3%2Fsrc%2Fredblackbst%2FRedBlackBST.java
 
 ____
 

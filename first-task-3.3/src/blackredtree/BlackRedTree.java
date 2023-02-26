@@ -8,8 +8,8 @@ public class BlackRedTree {
     private static final Logger logger = Logger.getLogger(BlackRedTree.class.getName());
 
     private Node root;
-    private final String colorBlack = "BLACK";
-    private final String colorRed = "RED";
+    private static final String colorBlack = "BLACK";
+    private static final String colorRed = "RED";
 
     class Node {
         private final char data;
@@ -56,10 +56,9 @@ public class BlackRedTree {
     }
 
     // Смена цвета узлов и вращения происходят в следующих случаях:
-    // - если левый и правый потомок являются красными узлами, то происходит обмен цвета потомков с их родителем, поскольку корень не может
-    // быть красным и листья тоже;
-    // - если левый потомок является красным, а правый - черным, то происходит левое малое вращение;
-    // - если правый потомок является красным, а левый - черным, то происходит правое малое вращение.
+    // Если левый и правый потомок являются красными узлами, то происходит обмен цвета потомков с их родителем, поскольку корень не может быть красным и листья тоже.
+    // Если левый потомок является красным, а правый - черным, то происходит левое малое вращение.
+    // Если правый потомок является красным, а левый - черным, то происходит правое малое вращение.
 
     public void colorSwap(Node currentNode) {
         Node parent = currentNode.parent;

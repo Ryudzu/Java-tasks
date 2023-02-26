@@ -236,3 +236,17 @@ ____
 2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/second-task-5.4/src/binarystringzerocheck
 3) Время выполнения "план-факт": план - 1 час и 30 минут; факт - 1 час и 20 минут.
 4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Asecond-task-5.4%2Fsrc%2Fbinarystringzerocheck%2FBinaryStringZeroCheck.java
+
+### Третья задача из раздела 5.4 ###
+
+1) Задача 5.4.1: Приведите регулярные выражения, описывающие все строки, которые содержат: a) точно четыре последовательных А; б) не более четырех последовательных А; в) по крайней мере одно вхождение четырех последовательных А.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/third-task-5.4/src/regexchecka
+3) Время выполнения "план-факт": план - 1 час; факт - 30 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Athird-task-5.4%2Fsrc%2Fregexchecka%2FRegexCheckA.java
+
+### Четвертая задача из раздела 5.4 ###
+
+1) Задача 5.4.12: Напишите регулярные выражения для каждого из следующего множества строк: a) телефонные номера наподобие (609) 555-1234; б) номера карточек социального страхования наподобие 123-45-6789; в) даты вроде December 31, 2012; г) IP-адреса в виде a.b.c.d, где каждая буква может представлять одну, две или три цифры, наподобие 196.26.155.241; д) автомобильные номера, которые начинаются четырьмя цифрами и оканчиваются двумя прописными буквами.
+2) Ссылка на директорию с заданием: https://github.com/Ryudzu/Java-tasks/tree/main/fourth-task-5.4/src/regexusage
+3) Время выполнения "план-факт": план - 1 час; факт - 50 минут.
+4) Ссылка на sonarcloud: https://sonarcloud.io/code?id=Ryudzu_Java-tasks&selected=Ryudzu_Java-tasks%3Afourth-task-5.4%2Fsrc%2Fregexusage%2FRegexUsage.java

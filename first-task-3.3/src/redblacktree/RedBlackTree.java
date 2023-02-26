@@ -1,11 +1,11 @@
-package blackredtree;
+package redblacktree;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class BlackRedTree {
+public class RedBlackTree {
 
-    private static final Logger logger = Logger.getLogger(BlackRedTree.class.getName());
+    private static final Logger logger = Logger.getLogger(RedBlackTree.class.getName());
 
     private Node root;
     private static final String BLACK = "BLACK";
@@ -188,7 +188,7 @@ public class BlackRedTree {
     }
 
     public static void main(String[] args) {
-        BlackRedTree tree = new BlackRedTree();
+        RedBlackTree tree = new RedBlackTree();
 
         // EASYQUTION
 

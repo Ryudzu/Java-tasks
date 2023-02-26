@@ -8,8 +8,8 @@ public class BlackRedTree {
     private static final Logger logger = Logger.getLogger(BlackRedTree.class.getName());
 
     private Node root;
-    private static final String colorBlack = "BLACK";
-    private static final String colorRed = "RED";
+    private static final String BLACK = "BLACK";
+    private static final String RED = "RED";
 
     class Node {
         private final char data;
@@ -42,7 +42,7 @@ public class BlackRedTree {
         }
 
         Node newNode = new Node(key);
-        newNode.color = colorRed;
+        newNode.color = RED;
         if (parent == null)
             root = newNode;
         else if (key < parent.data)
@@ -66,20 +66,20 @@ public class BlackRedTree {
         if (parent == null)
             return;
 
-        if (parent.color.equals(colorBlack))
+        if (parent.color.equals(BLACK))
             return;
 
         Node grandparent = parent.parent;
         if (grandparent == null) {
-            parent.color = colorBlack;
+            parent.color = BLACK;
             return;
         }
 
         Node uncle = getUncle(parent);
-        if (uncle != null && uncle.color.equals(colorRed)) {
-            parent.color = colorBlack;
-            grandparent.color = colorRed;
-            uncle.color = colorBlack;
+        if (uncle != null && uncle.color.equals(RED)) {
+            parent.color = BLACK;
+            grandparent.color = RED;
+            uncle.color = BLACK;
 
             colorSwap(grandparent);
         } else if (parent == grandparent.left) {
@@ -89,8 +89,8 @@ public class BlackRedTree {
             }
             rotateRight(grandparent);
 
-            parent.color = colorBlack;
-            grandparent.color = colorRed;
+            parent.color = BLACK;
+            grandparent.color = RED;
         } else {
             if (currentNode == parent.left) {
                 rotateRight(parent);
@@ -98,8 +98,8 @@ public class BlackRedTree {
             }
             rotateLeft(grandparent);
 
-            parent.color = colorBlack;
-            grandparent.color = colorRed;
+            parent.color = BLACK;
+            grandparent.color = RED;
         }
     }
 
@@ -179,7 +179,7 @@ public class BlackRedTree {
                 indent += "|  ";
             }
 
-            String sColor = currentNode.color.equals("RED") ? "RED" : colorBlack;
+            String sColor = currentNode.color.equals(RED) ? RED : BLACK;
             result = result.concat(currentNode.data + " (" + sColor + ")\n");
             printTree(currentNode.left, indent, false);
             printTree(currentNode.right, indent, true);

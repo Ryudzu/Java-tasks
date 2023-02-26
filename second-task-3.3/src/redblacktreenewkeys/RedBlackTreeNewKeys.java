@@ -181,6 +181,9 @@ public class RedBlackTreeNewKeys {
                 indent += "|    ";
             }
 
+            if (currentNode == root)
+                currentNode.color = BLACK;
+
             String sColor = currentNode.color.equals(RED) ? RED : BLACK;
             result = result.concat(currentNode.data + " (" + sColor + ")\n");
             printTree(currentNode.left, indent, false);
